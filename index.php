@@ -435,6 +435,74 @@ HTML;
                     </div>
                 </div>
             </div>
+
+            <!-- NOUVEAU : DJIBRIL MAILLET CV EMPLOI (NOUVEAU STYLE SIDEBAR 2 COLONNES) -->
+            <div class="col-12">
+                <div class="card shadow-lg border-0" style="background: linear-gradient(135deg, #1c354d 0%, #0f1f2e 100%); color: white; border-radius: 14px; border-left: 6px solid #00bfa5 !important;">
+                    <div class="card-body p-4">
+                        <div class="d-flex flex-wrap justify-content-between align-items-center mb-3">
+                            <div class="d-flex align-items-center gap-3">
+                                <img src="profil_djibril.jpg" alt="Djibril" style="width: 60px; height: 60px; border-radius: 50%; border: 2px solid #00bfa5; object-fit: cover;" onerror="this.src='https://www.svgrepo.com/show/447833/user-profile.svg'">
+                                <div>
+                                    <span class="badge px-3 py-1 fw-bold text-uppercase mb-1" style="background-color: #00bfa5; color: #0f1f2e;">⭐ NOUVEAU DESIGN SIDEBAR</span>
+                                    <h2 class="h3 fw-bold text-white mb-1">🧑‍🤝‍🧑 DJIBRIL MAILLET — CV EMPLOI</h2>
+                                    <p class="text-light mb-0 small" style="color: #cbd5e1 !important;">
+                                        14 CVs sur-mesure au nouveau style 2 colonnes avec sidebar navy (#1c354d), photo, L1 Droit, permis B et <strong>zéro adresse postale</strong>.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="mt-3 mt-lg-0">
+                                <a href="djibril_cv_emploi.php" class="btn btn-lg fw-bold shadow px-4 py-2" style="background-color: #00bfa5; color: #0f1f2e; border: none;">
+                                    🚀 Ouvrir le Hub Djibril Maillet (14 CVs) →
+                                </a>
+                            </div>
+                        </div>
+
+                        <hr style="border-color: rgba(255,255,255,0.2);">
+
+                        <div class="row g-2 text-start">
+                            <!-- Restauration -->
+                            <div class="col-md-3">
+                                <div class="p-2 rounded h-100" style="background: rgba(255,255,255,0.06);">
+                                    <div class="fw-bold small mb-2" style="color: #5eead4;">🍔 RESTAURATION RAPIDE</div>
+                                    <a href="djibril_quick.php" class="btn btn-sm btn-outline-light w-100 mb-1 text-start">🔴 Quick (12h/24h)</a>
+                                    <a href="djibril_g_la_dalle.php" class="btn btn-sm btn-outline-light w-100 text-start">🟠 G-La Dalle (Burger)</a>
+                                </div>
+                            </div>
+                            <!-- Mode & Vente -->
+                            <div class="col-md-3">
+                                <div class="p-2 rounded h-100" style="background: rgba(255,255,255,0.06);">
+                                    <div class="fw-bold text-info small mb-2">🛍️ MODE &amp; VENTE</div>
+                                    <a href="djibril_claires.php" class="btn btn-sm btn-outline-light w-100 mb-1 text-start">🌸 Claire's (Accessoires)</a>
+                                    <a href="djibril_ikks_men.php" class="btn btn-sm btn-outline-light w-100 mb-1 text-start">👔 IKKS Men (CDD 20h)</a>
+                                    <a href="djibril_jules.php" class="btn btn-sm btn-outline-light w-100 mb-1 text-start">👖 Jules (CDD 15h-24h)</a>
+                                    <a href="djibril_casa_carcasas.php" class="btn btn-sm btn-outline-light w-100 mb-1 text-start">📱 Casa Carcasas (CDD 15h)</a>
+                                    <a href="djibril_pull_and_bear.php" class="btn btn-sm btn-outline-light w-100 mb-1 text-start">🧢 Pull &amp; Bear (CDD 24h)</a>
+                                    <a href="djibril_intersport.php" class="btn btn-sm btn-outline-light w-100 text-start">⚽ Intersport (CDD 12-24h)</a>
+                                </div>
+                            </div>
+                            <!-- Grande Distribution -->
+                            <div class="col-md-3">
+                                <div class="p-2 rounded h-100" style="background: rgba(255,255,255,0.06);">
+                                    <div class="fw-bold text-success small mb-2">🛒 GRANDE DISTRIBUTION</div>
+                                    <a href="djibril_action.php" class="btn btn-sm btn-outline-light w-100 mb-1 text-start">🔵 Action (CDD 12h-24h)</a>
+                                    <a href="djibril_lidl.php" class="btn btn-sm btn-outline-light w-100 text-start">🟡 Lidl (CDI 18h-24h)</a>
+                                </div>
+                            </div>
+                            <!-- Logistique & BTP -->
+                            <div class="col-md-3">
+                                <div class="p-2 rounded h-100" style="background: rgba(255,255,255,0.06);">
+                                    <div class="fw-bold small mb-2" style="color: #c4b5fd !important;">📦 LOGISTIQUE &amp; BTP</div>
+                                    <a href="djibril_preparateur_commande.php" class="btn btn-sm btn-outline-light w-100 mb-1 text-start">📦 Préparateur Commande</a>
+                                    <a href="djibril_agent_exploitation.php" class="btn btn-sm btn-outline-light w-100 mb-1 text-start">🚚 Agent Exploitation</a>
+                                    <a href="djibril_plaquiste.php" class="btn btn-sm btn-outline-light w-100 mb-1 text-start">🧱 Plaquiste / BTP</a>
+                                    <a href="djibril_leroy_merlin_nuit.php" class="btn btn-sm btn-outline-light w-100 text-start">🟢 Leroy Merlin (Nuit)</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <!-- INTÉRIM SUISSE -->
             <div class="col-md-6">
                 <div class="card shadow-sm h-100 border-top border-danger border-top-3">
@@ -537,11 +605,16 @@ HTML;
             <div class="col-md-12">
                 <div class="card shadow-sm border-top border-secondary border-top-3">
                     <div class="card-body">
-                        <h4 class="card-title text-secondary mb-4">🧑‍🤝‍🧑 CV PROCHES <small class="text-muted fs-6">(Djibril - Frontalier)</small></h4>
+                        <h4 class="card-title text-secondary mb-3">🧑‍🤝‍🧑 CV PROCHES <small class="text-muted fs-6">(Djibril Maillet)</small></h4>
+                        <div class="mb-3">
+                            <a href="djibril_cv_emploi.php" class="btn btn-dark w-100 fw-bold shadow-sm py-2" style="background-color: #1c354d; border: 2px solid #00bfa5; color: #00bfa5;">
+                                ⭐ Accéder aux 14 CVs Emploi Ciblés de Djibril Maillet (Nouveau Style Sidebar) →
+                            </a>
+                        </div>
                         <div class="row g-2">
-                            <div class="col-md-4"><a href="djibril.php" class="btn btn-outline-secondary w-100">📄 Polyvalent</a></div>
-                            <div class="col-md-4"><a href="djibril_manutention.php" class="btn btn-outline-secondary w-100">📦 Manutention</a></div>
-                            <div class="col-md-4"><a href="djibril_restauration.php" class="btn btn-outline-secondary w-100">🍔 Restauration</a></div>
+                            <div class="col-md-4"><a href="djibril.php" class="btn btn-outline-secondary w-100">📄 Frontalier Polyvalent</a></div>
+                            <div class="col-md-4"><a href="djibril_manutention.php" class="btn btn-outline-secondary w-100">📦 Frontalier Manutention</a></div>
+                            <div class="col-md-4"><a href="djibril_restauration.php" class="btn btn-outline-secondary w-100">🍔 Frontalier Restauration</a></div>
                         </div>
                     </div>
                 </div>
