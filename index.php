@@ -4,7 +4,21 @@ require 'vendor/autoload.php';
 use Dompdf\Dompdf;
 
 if (isset($_POST['generate'])) {
-    $dompdf = new Dompdf();
+    $options = new \Dompdf\Options();
+    $options->set('isRemoteEnabled', true);
+    $dompdf = new Dompdf($options);
+
+    $path = 'profil accuel.jpg';
+    $photoHtml = '';
+    if (file_exists($path)) {
+        $type = pathinfo($path, PATHINFO_EXTENSION);
+        $data = file_get_contents($path);
+        $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
+        $photoHtml = '<img src="' . $base64 . '" class="profile-photo" alt="Photo">';
+    } else {
+        $photoHtml = '<img src="https://www.svgrepo.com/show/447833/user-profile.svg" class="profile-photo" alt="Photo">';
+    }
+
     $html = <<<HTML
 <!DOCTYPE html>
 <html lang="fr">
@@ -13,183 +27,247 @@ if (isset($_POST['generate'])) {
     <style>
         body {
             font-family: Arial, sans-serif;
-            line-height: 1.4;
+            line-height: 1.2;
             margin: 0;
-            padding: 20px;
+            padding: 10px 25px;
             color: #1e293b;
             background-color: #fff;
         }
-        .header {
+        .header-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+        }
+        .header-left {
+            width: 30%;
+            font-size: 8.5pt;
+            color: #64748b;
+            vertical-align: middle;
+            text-align: left;
+        }
+        .header-center {
+            width: 40%;
             text-align: center;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid #28a745;
+            vertical-align: middle;
+        }
+        .header-right {
+            width: 30%;
+            text-align: right;
+            vertical-align: middle;
         }
         .header h1 { 
-            font-size: 26pt; 
+            font-size: 19pt; 
             margin: 0; 
             text-transform: uppercase; 
             font-weight: bold;
             color: #0f172a;
         }
         .header .subtitle { 
-            font-size: 14pt; 
+            font-size: 11.5pt; 
             font-weight: bold; 
             color: #28a745;
-            margin-top: 5px;
+            margin-top: 2px;
             text-transform: uppercase;
         }
-        .contact-info { 
-            margin-top: 15px;
-            font-size: 10pt; 
+        .search-objective {
+            background-color: #28a745;
+            color: white;
+            font-size: 8.5pt;
+            padding: 3px 8px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-top: 5px;
+            font-weight: bold;
+        }
+        .rhythm {
+            font-size: 8pt;
             color: #64748b;
+            margin-top: 3px;
+        }
+        .profile-photo {
+            width: 80px;
+            height: auto;
+            border: 2px solid #28a745;
+            border-radius: 4px;
+        }
+        .contact-item {
+            margin-bottom: 2px;
+        }
+        .contact-icon {
+            width: 9px;
+            height: 9px;
+            margin-right: 4px;
         }
         h2 {
-            font-size: 11pt;
+            font-size: 9.5pt;
             text-transform: uppercase;
             border-bottom: 1px solid #e2e8f0;
-            padding-bottom: 5px;
-            margin-top: 30px;
-            margin-bottom: 18px;
+            padding-bottom: 2px;
+            margin-top: 12px;
+            margin-bottom: 8px;
             font-weight: bold;
             color: #0f172a;
         }
         .timeline-table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 20px;
+            margin-bottom: 6px;
         }
         .timeline-date {
-            width: 120px;
+            width: 105px;
             text-align: right;
             vertical-align: top;
-            padding-right: 25px;
+            padding-right: 15px;
             font-weight: bold;
-            font-size: 10pt;
+            font-size: 8pt;
             color: #28a745;
         }
         .timeline-content {
             vertical-align: top;
-            padding-bottom: 10px;
+            padding-bottom: 5px;
         }
         .item-title { 
             font-weight: bold; 
-            font-size: 11pt; 
+            font-size: 9pt; 
             color: #0f172a;
-            margin-bottom: 4px;
+            margin-bottom: 1px;
         }
         .item-subtitle { 
             color: #64748b; 
-            font-size: 9pt; 
-            margin-bottom: 8px; 
+            font-size: 8pt; 
+            margin-bottom: 2px; 
             font-style: italic;
         }
         ul { 
-            margin: 8px 0 10px 15px; 
+            margin: 2px 0 5px 15px; 
             padding: 0;
         }
         li { 
-            margin-bottom: 5px; 
-            font-size: 10pt; 
+            margin-bottom: 2px; 
+            font-size: 8.5pt; 
         }
         .skills-table {
-            width: 78%;
-            margin-left: 145px;
+            width: 95%;
+            margin-left: 2.5%;
             border-collapse: collapse;
-            margin-top: 10px;
+            margin-top: 5px;
         }
         .skills-column {
             width: 33%;
             vertical-align: top;
-            padding-right: 20px;
+            padding-right: 15px;
             text-align: left;
         }
         .skill-cat { 
             font-weight: bold; 
             font-size: 9pt; 
             text-transform: uppercase; 
-            margin-bottom: 12px; 
+            margin-bottom: 5px; 
             color: #28a745;
             border-bottom: 1px solid #28a745;
             display: block;
-            padding-bottom: 4px;
+            padding-bottom: 2px;
         }
         .skill-list {
-            font-size: 9pt;
+            font-size: 8.5pt;
             color: #1e293b;
-            line-height: 1.6;
-            margin-top: 10px;
+            line-height: 1.4;
+            margin-top: 4px;
+        }
+        .skill-icon, .section-icon {
+            width: 11px;
+            height: 11px;
+            vertical-align: middle;
+            margin-right: 5px;
         }
         .profil-block {
-            margin-left: 145px;
-            font-size: 10pt;
-            padding: 15px;
+            margin-left: 110px;
+            font-size: 9pt;
+            padding: 8px 12px;
             background-color: #f1f5f9;
             border-left: 5px solid #28a745;
-            margin-bottom: 25px;
-            line-height: 1.5;
+            margin-bottom: 10px;
+            line-height: 1.3;
         }
         strong { color: #0f172a; }
+
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>Yacine BENBRIK</h1>
-        <div class="subtitle">Développeur Full-Stack Junior</div>
-        <div class="contact-info">
-            Marseille, France | 07 67 63 84 45 | benbrikyacine60@gmail.com<br>
-            github.com/yacineb03 | linkedin.com/in/yacine-benbrik
-        </div>
-    </div>
-
+    <table class="header-table">
+        <tr>
+            <td class="header-left">
+                <div class="contact-item">Marseille, France</div>
+                <div class="contact-item">07 67 63 84 45</div>
+                <div class="contact-item">yacin.benbrik@epitech.eu</div>
+                <div class="contact-item">github.com/yacineb03</div>
+                <div class="contact-item">linkedin.com/in/yacine-benbrik</div>
+            </td>
+            <td class="header-center">
+                <div class="header">
+                    <h1>Yacine BENBRIK</h1>
+                    <div class="subtitle">Développeur Full-Stack Junior</div>
+                    <div class="search-objective">RECHERCHE D'ALTERNANCE</div>
+                    <div class="rhythm">Rythme : 5 semaines / 1 semaine</div>
+                </div>
+            </td>
+            <td class="header-right">
+                $photoHtml
+            </td>
+        </tr>
+    </table>
     <div class="section">
         <h2>Profil Professionnel</h2>
         <div class="profil-block">
-            Étudiant à la <strong>Web@cadémie by Epitech</strong>, je me spécialise dans le développement Full-Stack. Ma méthodologie repose sur l'exploitation des outils de <strong>Productivité Augmentée (IA)</strong>, me permettant d'accélérer le cycle de développement, de sécuriser l'architecture logicielle et de résoudre des problématiques techniques complexes.
+            Actuellement étudiant à la <strong>Web@cadémie by Epitech</strong>, je suis passionné par le développement web et j'apprends chaque jour de nouvelles technologies. Je recherche aujourd'hui une alternance pour mettre mes connaissances en pratique, apprendre aux côtés de professionnels et m'investir sérieusement dans vos projets de développement.
         </div>
     </div>
 
     <div class="section">
-        <h2>Expérience & Freelance</h2>
+        <h2>Projets & Réalisations</h2>
         <table class="timeline-table">
             <tr>
-                <td class="timeline-date">2023 - 2025</td>
+                <td class="timeline-date">Académique</td>
                 <td class="timeline-content">
-                    <div class="item-title">Développeur Web Indépendant (Freelance)</div>
-                    <div class="item-subtitle">Conception & Solutions Digitales</div>
+                    <div class="item-title">Projets Académiques & Développement Personnel</div>
+                    <div class="item-subtitle">Mise en pratique intensive des fondamentaux du Web@cadémie</div>
                     <ul>
-                        <li>Développement d'interfaces responsives (HTML5, CSS3, JS ES6).</li>
-                        <li>Gestion de la relation client : analyse des besoins et suivi de projet.</li>
-                        <li>Optimisation SEO technique et amélioration de l'UX.</li>
-                    </ul>
-                </td>
-            </tr>
-        </table>
-    </div>
-
-    <div class="section">
-        <h2>Réalisations Full-Stack</h2>
-        <table class="timeline-table">
-            <tr>
-                <td class="timeline-date">Architecture SaaS</td>
-                <td class="timeline-content">
-                    <div class="item-title">Plateforme de Gestion Métier (Auto-École)</div>
-                    <div class="item-subtitle">Full-Stack Development & Workflow IA</div>
-                    <ul>
-                        <li>Système complet de planning, gestion d'élèves et suivi pédagogique.</li>
-                        <li>Utilisation de l'IA pour l'optimisation des algorithmes.</li>
-                        <li>Intégration de <strong>Firebase (Auth & Realtime Database)</strong>.</li>
+                        <li>Réalisation de projets en conditions réelles : respect des délais et des cahiers des charges.</li>
+                        <li>Travail en équipe et utilisation quotidienne d'outils de versioning (Git).</li>
                     </ul>
                 </td>
             </tr>
             <tr>
-                <td class="timeline-date">Web Application</td>
+                <td class="timeline-date">Dév. Web</td>
                 <td class="timeline-content">
-                    <div class="item-title">Prototype de Réservation (Type Airbnb)</div>
-                    <div class="item-subtitle">Architecture MVC & Logique métier</div>
+                    <div class="item-title">Klivio : Plateforme de mise en relation</div>
+                    <div class="item-subtitle">Développement Full-Stack & Expérience Utilisateur</div>
                     <ul>
-                        <li>Mise en place d'un moteur de recherche dynamique avec filtrage.</li>
-                        <li>Focus sur la robustesse du code et la rapidité d'exécution.</li>
+                        <li>Développement de fonctionnalités interactives et gestion des flux de données.</li>
+                        <li>Focus sur l'accessibilité et la fluidité de l'interface.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="timeline-date">Architecture</td>
+                <td class="timeline-content">
+                    <div class="item-title">Architecture SaaS : Gestion de planning Auto-école</div>
+                    <div class="item-subtitle">Full-Stack Development (Firebase / Node.js)</div>
+                    <ul>
+                        <li>Conception d'un système complet de planning dynamique et de suivi.</li>
+                        <li>Intégration d'une base de données temps réel pour la synchronisation des données.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="timeline-date">Full-Stack</td>
+                <td class="timeline-content">
+                    <div class="item-title">Application Web : Système de réservation dynamique</div>
+                    <div class="item-subtitle">Architecture MVC & Logique métier (Type Airbnb)</div>
+                    <ul>
+                        <li>Développement d'un moteur de recherche avec filtrage dynamique des annonces.</li>
+                        <li>Gestion des réservations et structuration de la base de données relationnelle.</li>
                     </ul>
                 </td>
             </tr>
@@ -234,15 +312,29 @@ if (isset($_POST['generate'])) {
             <tr>
                 <td class="skills-column">
                     <span class="skill-cat">Back-end & Data</span>
-                    <div class="skill-list">PHP, SQL (MySQL),<br>Firebase, <strong>Node.js</strong>.</div>
+                    <div class="skill-list">
+                        <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"> PHP, 
+                        <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"> SQL,<br>
+                        <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg"> Firebase, 
+                        <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"> <strong>Node.js</strong>
+                    </div>
                 </td>
                 <td class="skills-column">
                     <span class="skill-cat">Front-end</span>
-                    <div class="skill-list">HTML5, CSS3, <strong>Tailwind CSS</strong>,<br>JavaScript ES6+, <strong>Next.js</strong>.</div>
+                    <div class="skill-list">
+                        <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"> HTML5, 
+                        <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"> CSS3,<br>
+                        <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg"> <strong>Tailwind</strong>, 
+                        <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"> <strong>Next.js</strong>
+                    </div>
                 </td>
                 <td class="skills-column">
                     <span class="skill-cat">Méthodologie & Soft Skills</span>
-                    <div class="skill-list"><strong>Aisance orale</strong>, Travail en équipe,<br>Gestion de projet, Workflow IA,<br>Git / GitHub.</div>
+                    <div class="skill-list">
+                        <strong>Aisance orale</strong>, Travail en équipe,<br>
+                        <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"> Git / 
+                        <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"> GitHub
+                    </div>
                 </td>
             </tr>
         </table>
@@ -259,48 +351,207 @@ HTML;
 ?>
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
-    <title>Télécharger mon CV</title>
+    <title>Hub Générateur de CV</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body {
-            background-color: #f8f9fa;
-        }
-
-        .landing-card {
-            max-width: 600px;
-            margin: 100px auto;
-            text-align: center;
-            padding: 50px;
-            border-top: 5px solid #28a745;
-        }
-
-        .btn-success {
-            background-color: #28a745;
-            border: none;
-            padding: 15px 30px;
-            font-size: 1.2rem;
-        }
+        body { background-color: #f8f9fa; }
+        .card { transition: transform 0.2s; }
+        .card:hover { transform: translateY(-5px); }
+        .border-top-3 { border-top-width: 4px !important; }
     </style>
 </head>
-
 <body>
-    <div class="container">
-        <div class="card landing-card shadow-lg">
-            <h1 class="mb-4">Bonjour, je suis <span class="text-success">Yacine</span></h1>
-            <p class="text-muted mb-5">Développeur Full-Stack passionné par les nouvelles technologies.</p>
-            <form method="post">
-                <button type="submit" name="generate" class="btn btn-success btn-lg shadow">
-                    Télécharger mon CV (PDF)
-                </button>
-            </form>
-            <div class="mt-4">
-                <a href="CV_Generator/index.php" class="text-decoration-none text-muted small">Accéder au générateur →</a>
+    <div class="container py-5">
+        <div class="text-center mb-5">
+            <h1 class="display-5 fw-bold">Hub <span class="text-primary">Générateur CV</span></h1>
+            <p class="text-muted lead">Sélectionnez la catégorie de CV à générer :</p>
+        </div>
+
+        <div class="row g-4">
+            
+            <!-- NOUVEAU : YACINE BENBRIK CV EMPLOI -->
+            <div class="col-12">
+                <div class="card shadow-lg border-0 border-top border-primary border-top-3" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; border-radius: 14px;">
+                    <div class="card-body p-4">
+                        <div class="d-flex flex-wrap justify-content-between align-items-center mb-3">
+                            <div>
+                                <span class="badge bg-warning text-dark px-3 py-2 fw-bold text-uppercase mb-2">⭐ NOUVEAU ESPACE</span>
+                                <h2 class="h3 fw-bold text-white mb-1">💼 YACINE BENBRIK — CV EMPLOI</h2>
+                                <p class="text-light mb-0 small" style="color: #cbd5e1 !important;">
+                                    14 CVs sur-mesure pour chaque métier et enseigne ciblée. Formats A4 calibrés à 1 page, expériences valorisées, <strong>zéro adresse postale</strong>.
+                                </p>
+                            </div>
+                            <div class="mt-3 mt-lg-0">
+                                <a href="cv_emploi.php" class="btn btn-primary btn-lg fw-bold shadow px-4 py-2">
+                                    🚀 Ouvrir le Hub CV Emploi (14 Métiers) →
+                                </a>
+                            </div>
+                        </div>
+
+                        <hr style="border-color: rgba(255,255,255,0.2);">
+
+                        <div class="row g-2 text-start">
+                            <!-- Restauration -->
+                            <div class="col-md-3">
+                                <div class="p-2 rounded h-100" style="background: rgba(255,255,255,0.06);">
+                                    <div class="fw-bold text-warning small mb-2">🍔 RESTAURATION RAPIDE</div>
+                                    <a href="cv_quick.php" class="btn btn-sm btn-outline-light w-100 mb-1 text-start">🔴 Quick (12h/24h)</a>
+                                    <a href="cv_g_la_dalle.php" class="btn btn-sm btn-outline-light w-100 text-start">🟠 G-La Dalle (Burger)</a>
+                                </div>
+                            </div>
+                            <!-- Mode & Vente -->
+                            <div class="col-md-3">
+                                <div class="p-2 rounded h-100" style="background: rgba(255,255,255,0.06);">
+                                    <div class="fw-bold text-info small mb-2">🛍️ MODE &amp; VENTE</div>
+                                    <a href="cv_claires.php" class="btn btn-sm btn-outline-light w-100 mb-1 text-start">🌸 Claire's (Accessoires)</a>
+                                    <a href="cv_ikks_men.php" class="btn btn-sm btn-outline-light w-100 mb-1 text-start">👔 IKKS Men (CDD 20h)</a>
+                                    <a href="cv_jules.php" class="btn btn-sm btn-outline-light w-100 mb-1 text-start">👖 Jules (CDD 15h-24h)</a>
+                                    <a href="cv_casa_carcasas.php" class="btn btn-sm btn-outline-light w-100 mb-1 text-start">📱 Casa Carcasas (CDD 15h)</a>
+                                    <a href="cv_pull_and_bear.php" class="btn btn-sm btn-outline-light w-100 mb-1 text-start">🧢 Pull &amp; Bear (CDD 24h)</a>
+                                    <a href="cv_intersport.php" class="btn btn-sm btn-outline-light w-100 text-start">⚽ Intersport (CDD 12-24h)</a>
+                                </div>
+                            </div>
+                            <!-- Grande Distribution -->
+                            <div class="col-md-3">
+                                <div class="p-2 rounded h-100" style="background: rgba(255,255,255,0.06);">
+                                    <div class="fw-bold text-success small mb-2">🛒 GRANDE DISTRIBUTION</div>
+                                    <a href="cv_action.php" class="btn btn-sm btn-outline-light w-100 mb-1 text-start">🔵 Action (CDD 12h-24h)</a>
+                                    <a href="cv_lidl.php" class="btn btn-sm btn-outline-light w-100 text-start">🟡 Lidl (CDI 18h-24h)</a>
+                                </div>
+                            </div>
+                            <!-- Logistique & BTP -->
+                            <div class="col-md-3">
+                                <div class="p-2 rounded h-100" style="background: rgba(255,255,255,0.06);">
+                                    <div class="fw-bold small mb-2" style="color: #c4b5fd !important;">📦 LOGISTIQUE &amp; BTP</div>
+                                    <a href="cv_preparateur_commande.php" class="btn btn-sm btn-outline-light w-100 mb-1 text-start">📦 Préparateur Commande</a>
+                                    <a href="cv_agent_exploitation.php" class="btn btn-sm btn-outline-light w-100 mb-1 text-start">🚚 Agent Exploitation</a>
+                                    <a href="cv_plaquiste.php" class="btn btn-sm btn-outline-light w-100 mb-1 text-start">🧱 Plaquiste / BTP</a>
+                                    <a href="cv_leroy_merlin_nuit.php" class="btn btn-sm btn-outline-light w-100 text-start">🟢 Leroy Merlin (Nuit)</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <!-- INTÉRIM SUISSE -->
+            <div class="col-md-6">
+                <div class="card shadow-sm h-100 border-top border-danger border-top-3">
+                    <div class="card-body">
+                        <h4 class="card-title text-danger mb-4">🇨🇭 INTÉRIM SUISSE <small class="text-muted fs-6">(Frontalier)</small></h4>
+                        <div class="row g-2">
+                            <div class="col-12 mb-1"><a href="cv_securite_suisse.php" class="btn btn-danger w-100 fw-bold shadow-sm">🛡️ Sécurité & Surveillance (Standard Suisse 2026)</a></div>
+                            <div class="col-12 mb-1"><a href="cv_logistique_suisse.php" class="btn btn-danger w-100 fw-bold shadow-sm">📦 Logistique / Manutention / Cariste (Standard Suisse 2026)</a></div>
+                            <div class="col-12 mb-1"><a href="cv_restauration_suisse.php" class="btn btn-danger w-100 fw-bold shadow-sm">🍔 Restauration Rapide / Équipier Polyvalent (Standard Suisse 2026)</a></div>
+                            <div class="col-6"><a href="polyvalent.php" class="btn btn-outline-danger w-100">🏢 Polyvalent</a></div>
+                            <div class="col-6"><a href="restauration.php" class="btn btn-outline-danger w-100">🍔 Restauration</a></div>
+                            <div class="col-6"><a href="nettoyage.php" class="btn btn-outline-danger w-100">🧹 Nettoyage</a></div>
+                            <div class="col-6"><a href="vente.php" class="btn btn-outline-danger w-100">🛒 Vente/Magasin</a></div>
+                            <div class="col-12"><a href="manutention.php" class="btn btn-outline-danger w-100">🏗️ Manutention BTP</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- INTÉRIM MARSEILLE -->
+            <div class="col-md-6">
+                <div class="card shadow-sm h-100 border-top border-primary border-top-3">
+                    <div class="card-body">
+                        <h4 class="card-title text-primary mb-4">📍 INTÉRIM MARSEILLE</h4>
+                        <div class="row g-2">
+                            <div class="col-6"><a href="yacine_mrs_preparateur.php" class="btn btn-outline-primary w-100">📦 Prépa. Commande</a></div>
+                            <div class="col-6"><a href="yacine_mrs_livreur.php" class="btn btn-outline-primary w-100">🚚 Livreur</a></div>
+                            <div class="col-6"><a href="yacine_mrs_manutention.php" class="btn btn-outline-primary w-100">🏗️ Manutention</a></div>
+                            <div class="col-6"><a href="yacine_mrs_polyvalent.php" class="btn btn-outline-primary w-100">🔄 Polyvalent</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ALTERNANCES -->
+            <div class="col-md-6">
+                <div class="card shadow-sm h-100 border-top border-success border-top-3">
+                    <div class="card-body">
+                        <h4 class="card-title text-success mb-4">🎓 RECHERCHE ALTERNANCE</h4>
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <form method="post" class="m-0">
+                                    <button type="submit" name="generate" class="btn btn-success w-100 fw-bold py-2">💻 Alternance Développeur Web</button>
+                                </form>
+                            </div>
+                            <div class="col-12">
+                                <a href="cv_popeyes_plan_de_campagne.php" class="btn btn-warning w-100 fw-bold py-2 shadow-sm text-dark">🍗 Popeyes Plan de Campagne (Contrat Étudiant)</a>
+                            </div>
+                            <div class="col-12">
+                                <a href="cv_restauration_fastfood_etudiant.php" class="btn btn-outline-warning w-100 fw-bold py-2 shadow-sm text-dark">🍔 Restauration Rapide & Fast-Food Général (Contrat Étudiant)</a>
+                            </div>
+                            <div class="col-12">
+                                <a href="cv_technicien_cvc_solive.php" class="btn btn-primary w-100 fw-bold py-2 shadow-sm">❄️ Alternance Technicien CVC — SPÉCIAL LA SOLIVE</a>
+                            </div>
+                            <div class="col-12">
+                                <a href="cv_la_solive.php" class="btn btn-danger w-100 fw-bold py-2 shadow-sm">☀️ Alternance Conducteur de Travaux — SPÉCIAL LA SOLIVE</a>
+                            </div>
+                            <div class="col-12">
+                                <a href="cv_conducteur_travaux.php" class="btn btn-warning w-100 fw-bold py-2 shadow-sm text-dark">🏗️ Alternance Conducteur de Travaux (Général)</a>
+                            </div>
+                            <div class="col-12">
+                                <a href="cv_chef_de_chantier.php" class="btn btn-warning w-100 fw-bold py-2 shadow-sm text-dark">🚧 Alternance Chef de Chantier (Général)</a>
+                            </div>
+                            <div class="col-12">
+                                <a href="frigoriste.php" class="btn btn-outline-success w-100 fw-bold py-2">❄️ Alternance Frigoriste CVC (Chaud & Froid)</a>
+                            </div>
+                            <div class="col-12">
+                                <a href="electrotechnique.php" class="btn btn-outline-success w-100 fw-bold py-2">⚡ Alternance BTS Électrotechnique / Assistant Conducteur de Travaux</a>
+                            </div>
+                            <div class="col-12">
+                                <a href="cv_mec.php" class="btn btn-outline-success w-100 fw-bold py-2">📐 Alternance BTS MEC / Économiste de la construction</a>
+                            </div>
+                            <div class="col-12">
+                                <a href="lettre_motivation_mec.php" class="btn btn-outline-danger w-100 fw-bold py-2">✉️ Lettre de Motivation - BTS MEC</a>
+                            </div>
+                            <div class="col-12">
+                                <a href="lettre_motivation_dalkia.php" class="btn btn-outline-danger w-100 fw-bold py-2">✉️ Lettre de Motivation - Dalkia CVC</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- INTÉRIM ANNEMASSE -->
+            <div class="col-md-6">
+                <div class="card shadow-sm h-100 border-top border-info border-top-3">
+                    <div class="card-body">
+                        <h4 class="card-title text-info mb-4">🏔️ INTÉRIM FRANCE <small class="text-muted fs-6">(Annemasse)</small></h4>
+                        <div class="row g-2">
+                            <div class="col-6"><a href="france_interim.php" class="btn btn-outline-info w-100">🔴 Ultime Intérim</a></div>
+                            <div class="col-6"><a href="france_securite.php" class="btn btn-outline-info w-100">🛡️ Sécurité</a></div>
+                            <div class="col-6"><a href="france_livreur.php" class="btn btn-outline-info w-100">🚚 Livreur</a></div>
+                            <div class="col-6"><a href="france_restauration.php" class="btn btn-outline-info w-100">🍟 Fast-Food</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CV PROCHES -->
+            <div class="col-md-12">
+                <div class="card shadow-sm border-top border-secondary border-top-3">
+                    <div class="card-body">
+                        <h4 class="card-title text-secondary mb-4">🧑‍🤝‍🧑 CV PROCHES <small class="text-muted fs-6">(Djibril - Frontalier)</small></h4>
+                        <div class="row g-2">
+                            <div class="col-md-4"><a href="djibril.php" class="btn btn-outline-secondary w-100">📄 Polyvalent</a></div>
+                            <div class="col-md-4"><a href="djibril_manutention.php" class="btn btn-outline-secondary w-100">📦 Manutention</a></div>
+                            <div class="col-md-4"><a href="djibril_restauration.php" class="btn btn-outline-secondary w-100">🍔 Restauration</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="text-center mt-5 pt-4 border-top">
+            <a href="CV_Generator/index.php" class="text-decoration-none text-muted">Accéder à l'ancien générateur complet →</a>
         </div>
     </div>
 </body>
-
 </html>
