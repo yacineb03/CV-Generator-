@@ -30,221 +30,407 @@ if (isset($_POST['generate']) || (php_sapi_name() === 'cli' && isset($argv[1]) &
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <style>
-        @page { margin: 0; }
+        @page {
+            margin: 0;
+            size: A4 portrait;
+        }
         body {
             font-family: Helvetica, Arial, sans-serif;
-            margin: 0; padding: 0;
-            color: #1e293b; background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+            color: #1e293b;
+            background-color: #ffffff;
             line-height: 1.25;
             -webkit-font-smoothing: antialiased;
         }
-        .header-banner {
-            width: 100%; background-color: #0f172a;
-            padding: 16px 20px 14px 20px; box-sizing: border-box;
+        .main-layout {
+            width: 100%;
+            height: 100%;
+            border-collapse: collapse;
         }
-        .header-table { width: 100%; border-collapse: collapse; }
-        .photo-cell { width: 72px; vertical-align: middle; }
+
+        /* SIDEBAR (32% width) */
+        .sidebar {
+            width: 32%;
+            background-color: #111827;
+            color: #f8fafc;
+            padding: 24px 16px 20px 18px;
+            vertical-align: top;
+        }
+        .photo-container {
+            text-align: center;
+            margin-bottom: 16px;
+        }
         .profile-photo {
-            width: 68px; height: 68px; border-radius: 50%;
-            border: 2.5px solid #d97706;
+            width: 82px;
+            height: 82px;
+            border-radius: 50%;
+            border: 3px solid #d97706;
+            display: block;
+            margin: 0 auto;
         }
-        .name-cell { vertical-align: middle; padding-left: 14px; }
-        .name {
-            font-size: 19pt; font-weight: bold; color: #ffffff;
-            margin: 0; text-transform: uppercase; letter-spacing: 0.8px;
+
+        .side-title {
+            color: #d97706;
+            font-size: 8.5pt;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1.5px solid #d97706;
+            padding-bottom: 3px;
+            margin-top: 14px;
+            margin-bottom: 8px;
         }
-        .job-tag {
-            display: inline-block; background-color: #d97706;
-            color: #ffffff; font-size: 8pt; font-weight: bold;
-            padding: 2px 8px; border-radius: 3px;
-            text-transform: uppercase; margin-top: 3px; letter-spacing: 0.4px;
+        .side-title:first-of-type {
+            margin-top: 0;
         }
-        .job-sub {
-            color: #94a3b8; font-size: 8.5pt; font-weight: bold;
-            margin-left: 6px; text-transform: uppercase;
+
+        /* CONTACT */
+        .contact-row {
+            margin-bottom: 5px;
+            font-size: 7.5pt;
+            line-height: 1.3;
+            color: #e2e8f0;
         }
-        .contact-cell {
-            width: 215px; vertical-align: middle; text-align: right;
-            font-size: 7.5pt; line-height: 1.35; color: #cbd5e1;
+        .contact-label {
+            font-weight: bold;
+            color: #94a3b8;
+            font-size: 6.8pt;
+            text-transform: uppercase;
         }
-        .contact-item { margin-bottom: 2px; white-space: nowrap; }
-        .contact-highlight { color: #d97706; font-weight: bold; }
-        .accent-strip { width: 100%; height: 4px; background-color: #d97706; }
-        .content-container { padding: 12px 18px 10px 18px; }
-        .grid-table { width: 100%; border-collapse: collapse; }
-        .col-left { width: 32%; vertical-align: top; padding-right: 14px; }
-        .col-right { width: 68%; vertical-align: top; padding-left: 4px; }
-        .side-card {
-            background-color: #f8fafc; border: 1px solid #e2e8f0;
-            border-radius: 5px; padding: 8px 10px; margin-bottom: 9px;
+        .contact-val {
+            color: #ffffff;
         }
-        .side-card-title {
-            color: #0f172a; font-size: 8.5pt; font-weight: bold;
-            text-transform: uppercase; letter-spacing: 0.5px;
-            border-bottom: 1.5px solid #d97706; padding-bottom: 2px; margin-bottom: 6px;
+        .contact-highlight {
+            color: #d97706;
+            font-weight: bold;
         }
-        .about-text { font-size: 7.5pt; line-height: 1.3; color: #475569; margin: 0; }
-        .skill-pill {
-            background-color: #f8fafc; border: 1px solid #cbd5e1;
-            color: #0f172a; font-size: 7.5pt; font-weight: bold;
-            padding: 3px 6px; border-radius: 4px; margin-bottom: 4px;
+
+        /* FORMATION */
+        .edu-block {
+            margin-bottom: 7px;
+            font-size: 7.5pt;
+            line-height: 1.25;
         }
-        .edu-item { margin-bottom: 6px; font-size: 7.5pt; line-height: 1.25; }
-        .edu-item:last-child { margin-bottom: 0; }
-        .edu-badge { font-weight: bold; color: #d97706; font-size: 7pt; }
-        .edu-title { font-weight: bold; color: #0f172a; }
-        .edu-sub { color: #64748b; font-style: italic; }
+        .edu-year {
+            color: #d97706;
+            font-weight: bold;
+            font-size: 7pt;
+        }
+        .edu-degree {
+            font-weight: bold;
+            color: #ffffff;
+        }
+        .edu-school {
+            color: #94a3b8;
+            font-size: 7pt;
+            font-style: italic;
+        }
+
+        /* SKILLS BADGES */
+        .skill-badge {
+            background-color: #1f2937;
+            border-left: 2.5px solid #d97706;
+            color: #f1f5f9;
+            font-size: 7.2pt;
+            font-weight: bold;
+            padding: 3px 6px;
+            margin-bottom: 4px;
+            border-radius: 2px;
+        }
+
+        /* LANGUES & DOTS */
+        .lang-item {
+            margin-bottom: 5px;
+            font-size: 7.5pt;
+            color: #e2e8f0;
+        }
+        .lang-dots {
+            color: #d97706;
+            letter-spacing: 2px;
+            font-size: 8pt;
+        }
+
+        /* DISPO CALLOUT */
+        .dispo-card {
+            background-color: rgba(0, 191, 165, 0.12);
+            border: 1px solid #d97706;
+            border-radius: 4px;
+            padding: 6px 8px;
+            margin-top: 10px;
+            text-align: center;
+            font-size: 7.5pt;
+            font-weight: bold;
+            color: #d97706;
+        }
+
+        /* RIGHT MAIN COLUMN (68% width) */
+        .main-content {
+            width: 68%;
+            background-color: #ffffff;
+            padding: 24px 22px 20px 22px;
+            vertical-align: top;
+        }
+
+        /* NAME & HEADER */
+        .header-box {
+            margin-bottom: 12px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+        }
+        .name-title {
+            font-size: 22pt;
+            font-weight: bold;
+            margin: 0;
+            line-height: 1.1;
+            letter-spacing: 0.5px;
+        }
+        .name-first {
+            color: #0f172a;
+        }
+        .name-last {
+            color: #d97706;
+        }
+        .job-headline {
+            font-size: 10pt;
+            font-weight: bold;
+            color: #475569;
+            text-transform: uppercase;
+            margin-top: 4px;
+            letter-spacing: 0.5px;
+        }
+        .badge-pill {
+            display: inline-block;
+            background-color: #d97706;
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 7.5pt;
+            padding: 2px 9px;
+            border-radius: 12px;
+            text-transform: uppercase;
+            margin-top: 5px;
+            letter-spacing: 0.4px;
+        }
+
+        /* HOOK / PROFIL */
+        .profile-quote {
+            background-color: #f8fafc;
+            border-left: 3px solid #d97706;
+            padding: 6px 10px;
+            margin-bottom: 12px;
+            font-size: 7.6pt;
+            line-height: 1.35;
+            color: #334155;
+            font-style: italic;
+            border-radius: 0 4px 4px 0;
+        }
+
+        /* SECTION TITLES */
         .section-header {
-            color: #0f172a; font-size: 9.5pt; font-weight: bold;
-            text-transform: uppercase; letter-spacing: 0.6px;
-            border-bottom: 1.5px solid #d97706; padding-bottom: 3px; margin-bottom: 8px;
+            color: #0f172a;
+            font-size: 10pt;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-top: 6px;
+            margin-bottom: 8px;
+            padding-bottom: 2px;
+            border-bottom: 1.5px solid #d97706;
         }
-        .exp-card {
-            border-left: 2.5px solid #d97706; padding-left: 8px; margin-bottom: 7px;
+
+        /* TIMELINE EXPERIENCES */
+        .exp-item {
+            margin-bottom: 7px;
+            border-left: 2px solid #e2e8f0;
+            padding-left: 8px;
+            position: relative;
         }
-        .exp-header-table { width: 100%; border-collapse: collapse; margin-bottom: 2px; }
-        .exp-role { font-weight: bold; font-size: 8.5pt; color: #0f172a; text-align: left; }
+        .exp-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1px;
+        }
+        .exp-role {
+            font-weight: bold;
+            font-size: 8.5pt;
+            color: #0f172a;
+            text-align: left;
+        }
         .exp-date-badge {
-            background-color: #f1f5f9; border: 1px solid #e2e8f0;
-            color: #d97706; font-weight: bold; font-size: 7pt;
-            padding: 1px 5px; border-radius: 3px; text-align: right; white-space: nowrap;
+            background-color: #f1f5f9;
+            color: #0f766e;
+            border: 1px solid #cbd5e1;
+            font-weight: bold;
+            font-size: 7pt;
+            padding: 1px 6px;
+            border-radius: 3px;
+            text-align: right;
+            white-space: nowrap;
         }
-        .exp-place { font-size: 7.5pt; color: #64748b; font-style: italic; margin-bottom: 2px; }
-        ul.tasks-list { margin: 1px 0 2px 12px; padding: 0; }
-        ul.tasks-list li { font-size: 7.8pt; color: #334155; margin-bottom: 1.5px; line-height: 1.25; }
+        .exp-sub {
+            font-size: 7.5pt;
+            color: #d97706;
+            font-weight: bold;
+            margin-bottom: 2px;
+        }
+        ul.tasks-list {
+            margin: 1px 0 2px 12px;
+            padding: 0;
+        }
+        ul.tasks-list li {
+            font-size: 7.8pt;
+            color: #334155;
+            margin-bottom: 1.5px;
+            line-height: 1.25;
+        }
     </style>
 </head>
 <body>
 
-    <div class="header-banner">
-        <table class="header-table">
-            <tr>
-                <td class="photo-cell">$photoHtml</td>
-                <td class="name-cell">
-                    <h1 class="name">DJIBRIL MAILLET</h1>
-                    <div style="margin-top: 3px;">
-                        <span class="job-tag">PLAQUISTE &bull; SECOND ŒUVRE BTP</span>
-                        <span class="job-sub">Pose Cloisons, Faux-Plafonds & Isolants</span>
-                    </div>
-                </td>
-                <td class="contact-cell">
-                    <div class="contact-item"><strong>Tél :</strong> +33 6 56 82 85 67</div>
-                    <div class="contact-item"><strong>Email :</strong> jeandjdj13@gmail.com</div>
-                    <div class="contact-item"><strong>Ville :</strong> Marseille (13005) &bull; France</div>
-                    <div class="contact-item contact-highlight">Permis B + Véhicule Personnel</div>
-                    <div class="contact-item">19 ans (09/07/2006) &bull; Immédiat</div>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="accent-strip"></div>
+    <table class="main-layout">
+        <tr>
+            <!-- SIDEBAR GAUCHE -->
+            <td class="sidebar">
+                <div class="photo-container">
+                    $photoHtml
+                </div>
 
-    <div class="content-container">
-        <table class="grid-table">
-            <tr>
-                <td class="col-left">
-                    <div class="side-card">
-                        <div class="side-card-title">Profil &amp; Atouts</div>
-                        <p class="about-text">Jeune travailleur rigoureux, très courageux et doté d'une solide résistance physique. Expérience concrète sur chantiers de rénovation : pose d'ossatures métalliques, plaques de plâtre BA13, isolants et joints.</p>
-                    </div>
+                <div class="side-title">Contact</div>
+                <div class="contact-row">
+                    <div class="contact-label">Téléphone</div>
+                    <div class="contact-val">+33 6 56 82 85 67</div>
+                </div>
+                <div class="contact-row">
+                    <div class="contact-label">Email</div>
+                    <div class="contact-val">jeandjdj13@gmail.com</div>
+                </div>
+                <div class="contact-row">
+                    <div class="contact-label">Localisation</div>
+                    <div class="contact-val">Marseille (13005) &bull; France</div>
+                </div>
+                <div class="contact-row">
+                    <div class="contact-label">Mobilité</div>
+                    <div class="contact-val contact-highlight">Permis B + Véhicule personnel</div>
+                </div>
+                <div class="contact-row">
+                    <div class="contact-label">Profil</div>
+                    <div class="contact-val">19 ans &bull; Né le 09/07/2006</div>
+                </div>
 
-                    <div class="side-card">
-                        <div class="side-card-title">Savoir-Être</div>
-                        <div class="skill-pill">&bull; Implantation rails, montants & suspentes</div>
-                        <div class="skill-pill">&bull; Découpe & vissage plaques de plâtre BA13</div>
-                        <div class="skill-pill">&bull; Pose isolants laine de verre / roche</div>
-                        <div class="skill-pill">&bull; Application bandes calicots & enduit</div>
-                        <div class="skill-pill">&bull; Nettoyage chantier & sécurité EPI</div>
-                    </div>
+                <div class="side-title">Savoir-Être</div>
+                <div class="skill-badge">&bull; Implantation rails, montants & suspentes</div>
+                <div class="skill-badge">&bull; Découpe & vissage plaques plâtre BA13</div>
+                <div class="skill-badge">&bull; Pose isolants laine de verre / roche</div>
+                <div class="skill-badge">&bull; Application bandes calicots & enduit</div>
+                <div class="skill-badge">&bull; Nettoyage chantier & sécurité EPI</div>
 
-                    <div class="side-card">
-                        <div class="side-card-title">Formation</div>
-                        <div class="edu-item">
-                            <div class="edu-badge">2025 - 2026</div>
-                            <div class="edu-title">L1 Droit</div>
-                            <div class="edu-sub">Faculté Canebière Marseille</div>
-                        </div>
-                        <div class="edu-item">
-                            <div class="edu-badge">2024 - 2025</div>
-                            <div class="edu-title">Baccalauréat Général</div>
-                            <div class="edu-sub">Lycée Victor Hugo</div>
-                        </div>
-                        <div class="edu-item">
-                            <div class="edu-badge">2021</div>
-                            <div class="edu-title">Brevet &amp; Certif. PIX</div>
-                            <div class="edu-sub">Compétences numériques</div>
-                        </div>
-                    </div>
+                <div class="side-title">Formation</div>
+                <div class="edu-block">
+                    <div class="edu-year">2025 - 2026</div>
+                    <div class="edu-degree">L1 Droit</div>
+                    <div class="edu-school">Faculté Canebière Marseille</div>
+                </div>
+                <div class="edu-block">
+                    <div class="edu-year">2024 - 2025</div>
+                    <div class="edu-degree">Baccalauréat Général</div>
+                    <div class="edu-school">Lycée Victor Hugo</div>
+                </div>
+                <div class="edu-block">
+                    <div class="edu-year">2021</div>
+                    <div class="edu-degree">Brevet &amp; Certif. PIX</div>
+                    <div class="edu-school">Compétences numériques</div>
+                </div>
 
-                    <div class="side-card" style="margin-bottom: 0;">
-                        <div class="side-card-title">Langues &amp; Infos</div>
-                        <div style="font-size: 7.5pt; color: #334155; line-height: 1.35;">
-                            <div><strong>Français :</strong> Langue maternelle</div>
-                            <div><strong>Anglais :</strong> Niveau B2 (Accueil bilingue)</div>
-                            <div style="margin-top: 4px; color: #d97706; font-weight: bold;">Disponibilité : Disponible chantiers &bull; Permis B</div>
-                        </div>
-                    </div>
-                </td>
+                <div class="side-title">Langues</div>
+                <div class="lang-item">
+                    Français : Maternelle<br>
+                    <span class="lang-dots">&bull;&bull;&bull;&bull;&bull;</span>
+                </div>
+                <div class="lang-item">
+                    Anglais : Niveau B2 (Courant)<br>
+                    <span class="lang-dots">&bull;&bull;&bull;&bull;&empty;</span>
+                </div>
 
-                <td class="col-right">
-                    <div class="section-header">Expériences Professionnelles</div>
-                    <div class="exp-card">
-                        <table class="exp-header-table">
-                            <tr>
-                                <td class="exp-role">Aide-Plaquiste & Poseur Cloisons Sèches</td>
-                                <td style="text-align: right;"><span class="exp-date-badge">Mai 2025 - Oct. 2025</span></td>
-                            </tr>
-                        </table>
-                        <div class="exp-place">Entreprise de Rénovation & BTP (Marseille & PACA)</div>
-                        <ul class="tasks-list">
-                            <li>Prise de mesures, traçage et fixation des ossatures métalliques (rails et montants).</li>
-                            <li>Manutention, découpe précise et vissage des plaques de plâtre BA13 sur murs et cloisons.</li>
-                            <li>Mise en place des panneaux d'isolation thermique et phonique dans le respect des normes.</li>
-                            <li>Préparation des bandes à joint et nettoyage méthodique du chantier en fin de journée.</li>
-                        </ul>
+                <div class="dispo-card">
+                    Disponibilité Immédiate<br>
+                    Disponible chantiers &bull; Permis B
+                </div>
+            </td>
+
+            <!-- CONTENU PRINCIPAL DROIT -->
+            <td class="main-content">
+                <div class="header-box">
+                    <div class="name-title">
+                        <span class="name-first">DJIBRIL</span> <span class="name-last">MAILLET</span>
                     </div>
-                    <div class="exp-card">
-                        <table class="exp-header-table">
-                            <tr>
-                                <td class="exp-role">Aide-Ouvrier / Peintre en Bâtiment</td>
-                                <td style="text-align: right;"><span class="exp-date-badge">Fév. 2025 - Mai 2025</span></td>
-                            </tr>
-                        </table>
-                        <div class="exp-place">Chantiers divers de Rénovation (Région PACA)</div>
-                        <ul class="tasks-list">
-                            <li>Préparation des supports : ponçage, rebouchage des fissures, application d'enduits de lissage.</li>
-                            <li>Lessivage, protection des sols/menuiseries et application soignée de couches d'impression.</li>
-                        </ul>
+                    <div class="job-headline">Pose Cloisons, Faux-Plafonds & Isolants</div>
+                    <div>
+                        <span class="badge-pill">PLAQUISTE &bull; SECOND ŒUVRE BTP</span>
                     </div>
-                    <div class="exp-card">
-                        <table class="exp-header-table">
-                            <tr>
-                                <td class="exp-role">Manutentionnaire Chantier & Approvisionnement</td>
-                                <td style="text-align: right;"><span class="exp-date-badge">Juil. 2024 - Déc. 2024</span></td>
-                            </tr>
-                        </table>
-                        <div class="exp-place">Chantiers Logement (Marseille)</div>
-                        <ul class="tasks-list">
-                            <li>Déchargement des camions de matériaux (sacs d'enduit, rails, placo) et portage aux étages.</li>
-                            <li>Évacuation continue des gravats et respect strict du port des EPI.</li>
-                        </ul>
-                    </div>
-                    <div class="exp-card">
-                        <table class="exp-header-table">
-                            <tr>
-                                <td class="exp-role">Ouvrier Polyvalent Second Œuvre</td>
-                                <td style="text-align: right;"><span class="exp-date-badge">Mars 2024 - Juin 2024</span></td>
-                            </tr>
-                        </table>
-                        <div class="exp-place">Rénovation Résidentielle (Marseille)</div>
-                        <ul class="tasks-list">
-                            <li>Assistance aux artisans plaquistes et peintres, découpe de matériaux et maintien du chantier propre.</li>
-                        </ul>
-                    </div>
-                </td>
-            </tr>
-        </table>
-    </div>
+                </div>
+
+                <div class="profile-quote">
+                    &laquo; Jeune travailleur rigoureux, courageux et doté d'une solide résistance physique. Expérience concrète sur chantiers de second œuvre en pose d'ossatures métalliques, plaques de plâtre BA13, isolants et finitions soignées. &raquo;
+                </div>
+
+                <div class="section-header">Expériences Professionnelles</div>
+
+                <div class="exp-item">
+                    <table class="exp-table">
+                        <tr>
+                            <td class="exp-role">Aide-Plaquiste & Poseur Cloisons Sèches</td>
+                            <td style="text-align: right;"><span class="exp-date-badge">Mai 2025 - Oct. 2025</span></td>
+                        </tr>
+                    </table>
+                    <div class="exp-sub">Entreprise de Rénovation & BTP (Marseille & PACA)</div>
+                    <ul class="tasks-list">
+                        <li>Prise de mesures, traçage et fixation des ossatures métalliques (rails et montants).</li>
+                        <li>Manutention, découpe précise et vissage des plaques de plâtre BA13 sur murs et cloisons.</li>
+                        <li>Mise en place des panneaux d'isolation thermique et phonique dans le respect des normes.</li>
+                        <li>Préparation des bandes à joint et nettoyage méthodique du chantier en fin de journée.</li>
+                    </ul>
+                </div>
+                <div class="exp-item">
+                    <table class="exp-table">
+                        <tr>
+                            <td class="exp-role">Aide-Ouvrier / Peintre en Bâtiment</td>
+                            <td style="text-align: right;"><span class="exp-date-badge">Fév. 2025 - Mai 2025</span></td>
+                        </tr>
+                    </table>
+                    <div class="exp-sub">Chantiers divers de Rénovation (Région PACA)</div>
+                    <ul class="tasks-list">
+                        <li>Préparation des supports : ponçage, rebouchage des fissures, application d'enduits de lissage.</li>
+                        <li>Lessivage, protection des sols/menuiseries et application soignée de couches d'impression.</li>
+                    </ul>
+                </div>
+                <div class="exp-item">
+                    <table class="exp-table">
+                        <tr>
+                            <td class="exp-role">Manutentionnaire Chantier & Approvisionnement</td>
+                            <td style="text-align: right;"><span class="exp-date-badge">Juil. 2024 - Déc. 2024</span></td>
+                        </tr>
+                    </table>
+                    <div class="exp-sub">Chantiers Logement (Marseille)</div>
+                    <ul class="tasks-list">
+                        <li>Déchargement des camions de matériaux (sacs d'enduit, rails, placo) et portage aux étages.</li>
+                        <li>Évacuation continue des gravats et respect strict du port des EPI.</li>
+                    </ul>
+                </div>
+                <div class="exp-item">
+                    <table class="exp-table">
+                        <tr>
+                            <td class="exp-role">Ouvrier Polyvalent Second Œuvre</td>
+                            <td style="text-align: right;"><span class="exp-date-badge">Mars 2024 - Juin 2024</span></td>
+                        </tr>
+                    </table>
+                    <div class="exp-sub">Rénovation Résidentielle (Marseille)</div>
+                    <ul class="tasks-list">
+                        <li>Assistance aux artisans plaquistes et peintres, découpe de matériaux et maintien du chantier propre.</li>
+                    </ul>
+                </div>
+            </td>
+        </tr>
+    </table>
 
 </body>
 </html>
@@ -272,15 +458,15 @@ HTML;
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body { background-color: #f8f9fa; }
-        .landing-card { max-width: 600px; margin: 80px auto; text-align: center; padding: 40px; border-top: 5px solid #d97706; border-radius: 8px; }
-        .btn-custom { background-color: #0f172a; border: 2px solid #d97706; color: #d97706; padding: 14px 28px; font-size: 1.1rem; font-weight: bold; }
-        .btn-custom:hover { background-color: #d97706; color: #ffffff; }
+        .landing-card { max-width: 600px; margin: 80px auto; text-align: center; padding: 40px; border-top: 5px solid #111827; border-radius: 8px; }
+        .btn-custom { background-color: #111827; border: 2px solid #d97706; color: #d97706; padding: 14px 28px; font-size: 1.1rem; font-weight: bold; }
+        .btn-custom:hover { background-color: #d97706; color: #111827; }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="card landing-card shadow-lg">
-            <h1 class="mb-3">CV de <span style="color:#0f172a">Djibril MAILLET</span></h1>
+            <h1 class="mb-3">CV de <span style="color:#111827">Djibril MAILLET</span></h1>
             <p class="text-muted mb-4">Pose Cloisons, Faux-Plafonds & Isolants</p>
             <form method="post">
                 <button type="submit" name="generate" class="btn btn-custom btn-lg shadow w-100 mb-3">

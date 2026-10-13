@@ -38,7 +38,7 @@ foreach ($cvFiles as $phpFile => $expectedPdf) {
     $code = file_get_contents($phpFile);
 
     // 1. Check Contact Section
-    if (preg_match('/<td class="contact-cell">(.*?)<\/td>/s', $code, $contactMatch)) {
+    if (preg_match('/<div class="side-title">Contact<\/div>(.*?)<div class="side-title">/s', $code, $contactMatch)) {
         $contactText = strip_tags($contactMatch[1]);
         if (preg_match('/(rue|avenue|bd|boulevard|chemin|impasse|allée)\s+\d+|\d+,\s*(rue|avenue|boulevard)/i', $contactText)) {
             echo "  [ERREUR ADRESSE] Une adresse physique a été trouvée dans le contact : $contactText\n";

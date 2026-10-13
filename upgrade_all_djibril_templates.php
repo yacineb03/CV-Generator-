@@ -1,6 +1,132 @@
 <?php
 
-$jobs = [
+$allJobs = [
+    'quick' => [
+        'file' => 'djibril_quick.php',
+        'pdf' => 'CV_Djibril_Quick.pdf',
+        'accent' => '#00bfa5',
+        'tag' => 'QUICK &bull; CONTRAT 12H / 24H',
+        'sub' => 'Équipier Polyvalent de Restauration',
+        'dispo' => 'Contrat 12h / 24h &bull; Immédiat',
+        'quote' => 'Étudiant en droit rigoureux, énergique et habitué au travail cadencé. Doté d\'une excellente résistance au rush et du sens du service client, je m\'adapte immédiatement aux postes de caisse, comptoir et cuisine en respectant scrupuleusement les normes d\'hygiène.',
+        'skills' => [
+            'Vitesse d\'exécution & rush',
+            'Normes HACCP & hygiène',
+            'Esprit d\'équipe & entraide',
+            'Polyvalence caisse / cuisine',
+            'Rigueur & ponctualité'
+        ],
+        'exps' => [
+            [
+                'role' => 'Équipier Polyvalent &bull; Service & Restauration Rapide',
+                'place' => 'Enseigne de Restauration Rapide (Centre Commercial Marseille)',
+                'date' => 'Mai 2025 - Oct. 2025',
+                'tasks' => [
+                    'Accueil souriant, prise de commandes sur bornes interactives et encaissements rapides.',
+                    'Cuisson minute au grill et friteuse, toastage et assemblage cadencé des burgers.',
+                    'Préparation soignée des commandes à emporter et respect absolu des normes d\'hygiène HACCP.',
+                    'Nettoyage et entretien continu de la salle et des postes de production pendant les rushs.'
+                ]
+            ],
+            [
+                'role' => 'Agent d\'Orientation & Accueil Portuaire',
+                'place' => 'Intercruise — MSC Croisières (Marseille)',
+                'date' => 'Fév. 2025 - Mai 2025',
+                'tasks' => [
+                    'Accueil dynamique et orientation bienveillante de centaines de passagers en escale.',
+                    'Gestion active des files d\'attente lors des pics d\'affluence et contrôle d\'accès sécurisé.'
+                ]
+            ],
+            [
+                'role' => 'Employé Polyvalent de Commerce &bull; Vente & Caisse',
+                'place' => 'Commerce de Détail & Distribution (Marseille)',
+                'date' => 'Juil. 2024 - Déc. 2024',
+                'tasks' => [
+                    'Accueil client, encaissement rapide en caisse tactile sans écart et réassort soutenu des rayons.',
+                    'Entretien quotidien des espaces de vente et réception méthodique des marchandises.'
+                ]
+            ],
+            [
+                'role' => 'Animateur Polyvalent &bull; Gestion d\'Activités & Logistique',
+                'place' => 'Centre d\'Accueil Jeunesse & Séjours (Région PACA)',
+                'date' => 'Mars 2024 - Juil. 2024',
+                'tasks' => [
+                    'Encadrement dynamique de groupes et coordination logistique des temps forts.',
+                    'Sens aigu des responsabilités, écoute active et communication constante en équipe.'
+                ]
+            ],
+            [
+                'role' => 'Assistant Accueil & Services aux Usagers',
+                'place' => 'Services de Proximité (Marseille)',
+                'date' => 'Déc. 2023 - Fév. 2024',
+                'tasks' => [
+                    'Accueil physique bienveillant, information du public et orientation vers les services compétents.'
+                ]
+            ]
+        ]
+    ],
+    'g_la_dalle' => [
+        'file' => 'djibril_g_la_dalle.php',
+        'pdf' => 'CV_Djibril_G_La_Dalle.pdf',
+        'accent' => '#ea580c',
+        'tag' => 'G-LA DALLE &bull; FAST-FOOD BURGER',
+        'sub' => 'Équipier Polyvalent de Restauration',
+        'dispo' => 'Horaires décalés & soirs &bull; Immédiat',
+        'quote' => 'Étudiant sérieux en droit, réactif et résistant au stress. Passionné par le travail en équipe et la restauration rapide cadencée, motivé pour assurer l\'assemblage minuté des commandes burgers et la satisfaction totale des clients.',
+        'skills' => [
+            'Cuisson grill & montage burgers',
+            'Gestion flux Uber Eats / Deliveroo',
+            'Normes HACCP & sécurité alimentaire',
+            'Sang-froid en période de rush',
+            'Esprit d\'équipe & dynamisme'
+        ],
+        'exps' => [
+            [
+                'role' => 'Équipier Polyvalent &bull; Fast-Food & Burger Minute',
+                'place' => 'Enseigne Restauration Rapide & Burgers (Marseille)',
+                'date' => 'Mai 2025 - Oct. 2025',
+                'tasks' => [
+                    'Assemblage cadencé de burgers, cuisson grill, préparation des frites et sauces selon les fiches recettes.',
+                    'Préparation précise et rapide des commandes à emporter et remises aux livreurs (Uber Eats, Deliveroo).',
+                    'Accueil client au comptoir, encaissement sur caisse tactile et désinfection régulière des plans de travail.'
+                ]
+            ],
+            [
+                'role' => 'Agent d\'Orientation & Gestion des Flux',
+                'place' => 'Intercruise — MSC Croisières (Marseille)',
+                'date' => 'Fév. 2025 - Mai 2025',
+                'tasks' => [
+                    'Accueil énergique, gestion des files d\'attente lors des embarquements et orientation des passagers.',
+                    'Sang-froid et efficacité lors des créneaux de forte fréquentation.'
+                ]
+            ],
+            [
+                'role' => 'Employé Polyvalent de Commerce &bull; Service & Caisse',
+                'place' => 'Commerce & Snack de Quartier (Marseille)',
+                'date' => 'Juil. 2024 - Déc. 2024',
+                'tasks' => [
+                    'Service au comptoir, tenue de caisse fiable et réassort continu des boissons et snacks.',
+                    'Respect des règles d\'hygiène HACCP et entretien soigné de l\'espace de vente.'
+                ]
+            ],
+            [
+                'role' => 'Animateur Polyvalent &bull; Logistique & Activités',
+                'place' => 'Centre d\'Accueil Jeunesse (Région PACA)',
+                'date' => 'Mars 2024 - Juil. 2024',
+                'tasks' => [
+                    'Organisation des animations, encadrement de groupes et dynamisme collectif.'
+                ]
+            ],
+            [
+                'role' => 'Assistant Accueil &bull; Contact Public',
+                'place' => 'Services & Agence (Marseille)',
+                'date' => 'Déc. 2023 - Fév. 2024',
+                'tasks' => [
+                    'Accueil avec le sourire, écoute active et présentation irréprochable.'
+                ]
+            ]
+        ]
+    ],
     'action' => [
         'file' => 'djibril_action.php',
         'pdf' => 'CV_Djibril_Action.pdf',
@@ -8,7 +134,7 @@ $jobs = [
         'tag' => 'ACTION &bull; CDD 12H - 24H',
         'sub' => 'Employé Polyvalent de Magasin',
         'dispo' => 'CDD 12h-24h &bull; Immédiat',
-        'profil' => 'Étudiant en L1 Droit rigoureux, très dynamique et habitué au travail en équipe. Sens du client, grande rapidité de mise en rayon, tenue irréprochable de la caisse et respect des cadences magasin.',
+        'quote' => 'Étudiant en L1 Droit polyvalent, rigoureux et dynamique. Doté d\'un grand sens du commerce, d\'une excellente vitesse de mise en rayon et d\'une tenue de caisse rapide et fiable. Soucieux de maintenir des allées impeccables.',
         'skills' => [
             'Mise en rayon rapide & facing soigné',
             'Encaissement fiable & sens client',
@@ -70,7 +196,7 @@ $jobs = [
         'tag' => 'PRÉPARATEUR DE COMMANDE &bull; LOGISTIQUE',
         'sub' => 'Opérateur Entrepôt &bull; Picking & Scan',
         'dispo' => 'Temps partiel / Flexible &bull; Immédiat',
-        'profil' => 'Profil étudiant en L1 Droit rigoureux, dynamique et résistant à l\'effort physique. Maîtrise des process de picking au scanner, préparation minutieuse de commandes et respect strict des règles de sécurité.',
+        'quote' => 'Profil étudiant en L1 Droit rigoureux, dynamique et résistant à l\'effort physique. Maîtrise des process de picking au scanner, préparation minutieuse de commandes et respect strict des règles de sécurité.',
         'skills' => [
             'Picking radiofréquence / Scan RF',
             'Constitution & filmage de palettes',
@@ -132,10 +258,10 @@ $jobs = [
         'tag' => 'PLAQUISTE &bull; SECOND ŒUVRE BTP',
         'sub' => 'Pose Cloisons, Faux-Plafonds & Isolants',
         'dispo' => 'Disponible chantiers &bull; Permis B',
-        'profil' => 'Jeune travailleur rigoureux, très courageux et doté d\'une solide résistance physique. Expérience concrète sur chantiers de rénovation : pose d\'ossatures métalliques, plaques de plâtre BA13, isolants et joints.',
+        'quote' => 'Jeune travailleur rigoureux, courageux et doté d\'une solide résistance physique. Expérience concrète sur chantiers de second œuvre en pose d\'ossatures métalliques, plaques de plâtre BA13, isolants et finitions soignées.',
         'skills' => [
             'Implantation rails, montants & suspentes',
-            'Découpe & vissage plaques de plâtre BA13',
+            'Découpe & vissage plaques plâtre BA13',
             'Pose isolants laine de verre / roche',
             'Application bandes calicots & enduit',
             'Nettoyage chantier & sécurité EPI'
@@ -187,7 +313,7 @@ $jobs = [
         'tag' => 'AGENT D\'EXPLOITATION POLYVALENT',
         'sub' => 'Logistique Quai, Transit & Dispatching',
         'dispo' => 'Temps partiel / Flexible &bull; Immédiat',
-        'profil' => 'Étudiant en L1 Droit polyvalent, méthodique et réactif. Expérience avérée dans la gestion des flux logistiques, le contrôle de conformité des colis, la manutention sur quai et l\'orientation du public.',
+        'quote' => 'Étudiant en L1 Droit polyvalent, méthodique et réactif. Expérience avérée dans la gestion des flux logistiques, le contrôle de conformité des colis, la manutention sur quai et l\'orientation du public.',
         'skills' => [
             'Réception, contrôle & dispatch colis',
             'Manutention manuelle & transpalette',
@@ -249,7 +375,7 @@ $jobs = [
         'tag' => 'CLAIRE\'S &bull; VENTE & ACCESSOIRES',
         'sub' => 'Conseiller de Vente &bull; Vendeur Magasin',
         'dispo' => 'Vente magasin &bull; Immédiat',
-        'profil' => 'Étudiant en L1 Droit souriant, dynamique et passionné par le contact client. Excellente présentation, aisance relationnelle naturelle, sens aigu du conseil personnalisé et du merchandising visuel en boutique.',
+        'quote' => 'Étudiant en L1 Droit souriant, dynamique et passionné par le contact client. Excellente présentation, aisance relationnelle naturelle, sens aigu du conseil personnalisé et du merchandising visuel en boutique.',
         'skills' => [
             'Accueil chaleureux & conseil personnalisé',
             'Développement des ventes complémentaires',
@@ -266,7 +392,7 @@ $jobs = [
                     'Accueil souriant, découverte des envies des clientes et conseil stylistique personnalisé.',
                     'Ventes additionnelles actives (lots d\'accessoires, cosmétiques tendance, cartes cadeaux).',
                     'Encaissement rapide en caisse informatisée, emballages soignés et fidélisation.',
-                    'Maintien d\'un merchandising impeccable des présentoirs muraux et réassort continu.'
+                    'Maintien d\'un merchandising dynamique des présentoirs muraux et réassort continu.'
                 ]
             ],
             [
@@ -308,11 +434,11 @@ $jobs = [
     'ikks_men' => [
         'file' => 'djibril_ikks_men.php',
         'pdf' => 'CV_Djibril_IKKS_Men.pdf',
-        'accent' => '#334155',
+        'accent' => '#00bfa5',
         'tag' => 'IKKS MEN &bull; CDD 20H',
         'sub' => 'Conseiller de Vente &bull; Prêt-à-Porter Masculin',
         'dispo' => 'CDD 20h &bull; Immédiat & Flexible',
-        'profil' => 'Étudiant en L1 Droit élégant, passionné par la mode masculine haut de gamme et l\'univers denim. Excellente présentation, sens du service premium, capacité à composer des silhouettes complètes et à fidéliser.',
+        'quote' => 'Étudiant en L1 Droit élégant, passionné par la mode masculine haut de gamme et l\'univers denim. Excellente présentation, sens du service premium, capacité à composer des silhouettes complètes et à fidéliser la clientèle.',
         'skills' => [
             'Conseil stylistique & morphologique',
             'Relation client premium & écoute active',
@@ -374,10 +500,10 @@ $jobs = [
         'tag' => 'JULES &bull; CDD 15H-24H',
         'sub' => 'Conseiller de Vente &bull; Prêt-à-Porter Homme',
         'dispo' => 'CDD 15h-24h &bull; Polyvalent & Immédiat',
-        'profil' => 'Étudiant en L1 Droit chaleureux, dynamique et orienté satisfaction client. Très à l\'aise dans le prêt-à-porter urbain masculin, expert en pliage, tenue des tables et conseil look complet.',
+        'quote' => 'Étudiant en L1 Droit chaleureux, dynamique et orienté satisfaction client. Très à l\'aise dans le prêt-à-porter urbain masculin, expert en pliage, tenue des tables et conseil look complet.',
         'skills' => [
             'Aisance relationnelle & sourire constant',
-            'Conseil look urbain & associations de pièces',
+            'Conseil look urbain & associations pièces',
             'Tenue des tables & pliage rigoureux',
             'Gestion dynamique des cabines d\'essayage',
             'Encaissement rapide & carte club'
@@ -436,11 +562,11 @@ $jobs = [
         'tag' => 'LA CASA DE LAS CARCASAS &bull; CDD 15H',
         'sub' => 'Vendeur Conseil &bull; Accessoires Téléphonie',
         'dispo' => 'CDD 15h &bull; Week-ends & Soirs &bull; Immédiat',
-        'profil' => 'Étudiant en L1 Droit extrêmement dynamique, souriant et doté d\'une grande dextérité manuelle. Spécialiste de la pose ultra-précise de protections d\'écran (verre trempé) et de la vente active en galerie marchande.',
+        'quote' => 'Étudiant en L1 Droit extrêmement dynamique, souriant et doté d\'une grande dextérité manuelle. Spécialiste de la pose ultra-précise de protections d\'écran (verre trempé) et de la vente active en galerie marchande.',
         'skills' => [
-            'Pose minutieuse de protections verre trempé',
-            'Approche commerciale proactive en kiosque',
-            'Ventes complémentaires (coques, cordons, audio)',
+            'Pose minutieuse protections verre trempé',
+            'Approche commerciale active en kiosque',
+            'Ventes complémentaires (coques, chargeurs)',
             'Tenue de caisse rapide & inventaire stock',
             'Dynamisme communicatif & enthousiasme'
         ],
@@ -493,11 +619,11 @@ $jobs = [
     'pull_and_bear' => [
         'file' => 'djibril_pull_and_bear.php',
         'pdf' => 'CV_Djibril_Pull_and_Bear.pdf',
-        'accent' => '#0f172a',
+        'accent' => '#00bfa5',
         'tag' => 'PULL & BEAR (GROUPE INDITEX) &bull; CDD 24H',
         'sub' => 'Conseiller de Vente &bull; Mode Urbaine & Streetwear',
         'dispo' => 'CDD 24h &bull; Immédiat & Polyvalent',
-        'profil' => 'Étudiant en L1 Droit passionné par les tendances streetwear et la culture fast fashion. Rythme de travail très actif, grande rapidité de réassort en rayon, gestion efficace des cabines d\'essayage et encaissement.',
+        'quote' => 'Étudiant en L1 Droit passionné par les tendances streetwear et la culture fast fashion. Rythme de travail très actif, grande rapidité de réassort en rayon, gestion efficace des cabines d\'essayage et encaissement rapide.',
         'skills' => [
             'Culture streetwear & sens du look',
             'Réassort continu & cadence soutenue',
@@ -559,7 +685,7 @@ $jobs = [
         'tag' => 'INTERSPORT &bull; CDD 12H / 24H',
         'sub' => 'Vendeur Conseil &bull; Rayon Textile Sport & Lifestyle',
         'dispo' => 'CDD 12h/24h &bull; Immédiat & Polyvalent',
-        'profil' => 'Étudiant en L1 Droit sportif, enthousiaste et très dynamique. Connaissance pointue des marques sportswear, training et lifestyle. Conseil technique chaleureux, polyvalence caisse/rayon/réserve.',
+        'quote' => 'Étudiant en L1 Droit sportif, enthousiaste et très dynamique. Connaissance pointue des marques sportswear, training et lifestyle. Conseil technique chaleureux, sens du facing et polyvalence caisse/rayon/réserve.',
         'skills' => [
             'Passion univers sport & textile technique',
             'Conseil client personnalisé & bienveillance',
@@ -621,7 +747,7 @@ $jobs = [
         'tag' => 'LIDL &bull; CDI 18H-24H',
         'sub' => 'Équipier Polyvalent de Magasin &bull; Caisse & Rayons',
         'dispo' => 'CDI 18h-24h &bull; Matinaux & Flexibles',
-        'profil' => 'Étudiant en L1 Droit endurant, matinal et habitué aux cadences rapides de la grande distribution. Maîtrise des standards de caisse rapide, dépotage matinal de palettes, rotation DLC/FIFO et propreté irréprochable.',
+        'quote' => 'Étudiant en L1 Droit endurant, matinal et habitué aux cadences rapides de la grande distribution. Maîtrise des standards de caisse rapide, du dépotage matinal de palettes, de la rotation FIFO et de la propreté exemplaire.',
         'skills' => [
             'Cadence en caisse & zéro écart monétaire',
             'Dépotage matinal palettes & mise en rayon',
@@ -683,7 +809,7 @@ $jobs = [
         'tag' => 'LEROY MERLIN &bull; CDI 17H50 (20H00 - 23H30)',
         'sub' => 'Employé Logistique &bull; Mise en Rayon de Nuit',
         'dispo' => 'CDI 17h50 (20h-23h30) &bull; Nocturne',
-        'profil' => 'Étudiant en L1 Droit particulièrement disponible en soirée/nocturne (20h - 23h30), robuste et habitué au port de charges lourdes. Organisation rigoureuse, sécurité logistique, dépotage et gerbage soigné en rayon.',
+        'quote' => 'Étudiant en L1 Droit disponible en horaires nocturnes (20h - 23h30), robuste et habitué au port de charges lourdes. Organisation rigoureuse, respect absolu de la sécurité logistique, dépotage et mise en rayon soignée des matériaux.',
         'skills' => [
             'Mise en rayon nocturne de charges lourdes',
             'Dépotage palettes & transpalette manuel',
@@ -699,7 +825,7 @@ $jobs = [
                 'tasks' => [
                     'Dépotage rapide des palettes de livraison en créneau nocturne (20h - 23h30).',
                     'Mise en rayon soignée des références volumineuses et lourdes (outillage, quincaillerie, matériaux).',
-                    'Respect rigoureux des règles de sécurité, utilisation du transpalette manuel et balisage des zones de travail.',
+                    'Respect rigoureux des règles de sécurité, utilisation du transpalette manuel et balisage des allées.',
                     'Nettoyage et évacuation des emballages, cartons et films plastiques vers le compacteur.'
                 ]
             ],
@@ -739,17 +865,17 @@ $jobs = [
     ]
 ];
 
-function buildPhpFile($data) {
+function buildModernCanvaFile($data) {
     $accent = $data['accent'];
     $tag = $data['tag'];
     $sub = $data['sub'];
     $dispo = $data['dispo'];
-    $profil = $data['profil'];
+    $quote = $data['quote'];
     $pdf = $data['pdf'];
     
     $skillsHtml = '';
     foreach ($data['skills'] as $s) {
-        $skillsHtml .= "                        <div class=\"skill-pill\">&bull; $s</div>\n";
+        $skillsHtml .= "                <div class=\"skill-badge\">&bull; $s</div>\n";
     }
 
     $expsHtml = '';
@@ -759,20 +885,20 @@ function buildPhpFile($data) {
         $date = $exp['date'];
         $tasksLi = '';
         foreach ($exp['tasks'] as $t) {
-            $tasksLi .= "                            <li>$t</li>\n";
+            $tasksLi .= "                        <li>$t</li>\n";
         }
         $expsHtml .= <<<EXP
-                    <div class="exp-card">
-                        <table class="exp-header-table">
-                            <tr>
-                                <td class="exp-role">$role</td>
-                                <td style="text-align: right;"><span class="exp-date-badge">$date</span></td>
-                            </tr>
-                        </table>
-                        <div class="exp-place">$place</div>
-                        <ul class="tasks-list">
-$tasksLi                        </ul>
-                    </div>\n
+                <div class="exp-item">
+                    <table class="exp-table">
+                        <tr>
+                            <td class="exp-role">$role</td>
+                            <td style="text-align: right;"><span class="exp-date-badge">$date</span></td>
+                        </tr>
+                    </table>
+                    <div class="exp-sub">$place</div>
+                    <ul class="tasks-list">
+$tasksLi                    </ul>
+                </div>\n
 EXP;
     }
 
@@ -809,163 +935,349 @@ if (isset(\$_POST['generate']) || (php_sapi_name() === 'cli' && isset(\$argv[1])
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <style>
-        @page { margin: 0; }
+        @page {
+            margin: 0;
+            size: A4 portrait;
+        }
         body {
             font-family: Helvetica, Arial, sans-serif;
-            margin: 0; padding: 0;
-            color: #1e293b; background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+            color: #1e293b;
+            background-color: #ffffff;
             line-height: 1.25;
             -webkit-font-smoothing: antialiased;
         }
-        .header-banner {
-            width: 100%; background-color: #0f172a;
-            padding: 16px 20px 14px 20px; box-sizing: border-box;
+        .main-layout {
+            width: 100%;
+            height: 100%;
+            border-collapse: collapse;
         }
-        .header-table { width: 100%; border-collapse: collapse; }
-        .photo-cell { width: 72px; vertical-align: middle; }
+
+        /* SIDEBAR (32% width) */
+        .sidebar {
+            width: 32%;
+            background-color: #111827;
+            color: #f8fafc;
+            padding: 24px 16px 20px 18px;
+            vertical-align: top;
+        }
+        .photo-container {
+            text-align: center;
+            margin-bottom: 16px;
+        }
         .profile-photo {
-            width: 68px; height: 68px; border-radius: 50%;
-            border: 2.5px solid $accent;
+            width: 82px;
+            height: 82px;
+            border-radius: 50%;
+            border: 3px solid $accent;
+            display: block;
+            margin: 0 auto;
         }
-        .name-cell { vertical-align: middle; padding-left: 14px; }
-        .name {
-            font-size: 19pt; font-weight: bold; color: #ffffff;
-            margin: 0; text-transform: uppercase; letter-spacing: 0.8px;
+
+        .side-title {
+            color: $accent;
+            font-size: 8.5pt;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1.5px solid $accent;
+            padding-bottom: 3px;
+            margin-top: 14px;
+            margin-bottom: 8px;
         }
-        .job-tag {
-            display: inline-block; background-color: $accent;
-            color: #ffffff; font-size: 8pt; font-weight: bold;
-            padding: 2px 8px; border-radius: 3px;
-            text-transform: uppercase; margin-top: 3px; letter-spacing: 0.4px;
+        .side-title:first-of-type {
+            margin-top: 0;
         }
-        .job-sub {
-            color: #94a3b8; font-size: 8.5pt; font-weight: bold;
-            margin-left: 6px; text-transform: uppercase;
+
+        /* CONTACT */
+        .contact-row {
+            margin-bottom: 5px;
+            font-size: 7.5pt;
+            line-height: 1.3;
+            color: #e2e8f0;
         }
-        .contact-cell {
-            width: 215px; vertical-align: middle; text-align: right;
-            font-size: 7.5pt; line-height: 1.35; color: #cbd5e1;
+        .contact-label {
+            font-weight: bold;
+            color: #94a3b8;
+            font-size: 6.8pt;
+            text-transform: uppercase;
         }
-        .contact-item { margin-bottom: 2px; white-space: nowrap; }
-        .contact-highlight { color: $accent; font-weight: bold; }
-        .accent-strip { width: 100%; height: 4px; background-color: $accent; }
-        .content-container { padding: 12px 18px 10px 18px; }
-        .grid-table { width: 100%; border-collapse: collapse; }
-        .col-left { width: 32%; vertical-align: top; padding-right: 14px; }
-        .col-right { width: 68%; vertical-align: top; padding-left: 4px; }
-        .side-card {
-            background-color: #f8fafc; border: 1px solid #e2e8f0;
-            border-radius: 5px; padding: 8px 10px; margin-bottom: 9px;
+        .contact-val {
+            color: #ffffff;
         }
-        .side-card-title {
-            color: #0f172a; font-size: 8.5pt; font-weight: bold;
-            text-transform: uppercase; letter-spacing: 0.5px;
-            border-bottom: 1.5px solid $accent; padding-bottom: 2px; margin-bottom: 6px;
+        .contact-highlight {
+            color: $accent;
+            font-weight: bold;
         }
-        .about-text { font-size: 7.5pt; line-height: 1.3; color: #475569; margin: 0; }
-        .skill-pill {
-            background-color: #f8fafc; border: 1px solid #cbd5e1;
-            color: #0f172a; font-size: 7.5pt; font-weight: bold;
-            padding: 3px 6px; border-radius: 4px; margin-bottom: 4px;
+
+        /* FORMATION */
+        .edu-block {
+            margin-bottom: 7px;
+            font-size: 7.5pt;
+            line-height: 1.25;
         }
-        .edu-item { margin-bottom: 6px; font-size: 7.5pt; line-height: 1.25; }
-        .edu-item:last-child { margin-bottom: 0; }
-        .edu-badge { font-weight: bold; color: $accent; font-size: 7pt; }
-        .edu-title { font-weight: bold; color: #0f172a; }
-        .edu-sub { color: #64748b; font-style: italic; }
+        .edu-year {
+            color: $accent;
+            font-weight: bold;
+            font-size: 7pt;
+        }
+        .edu-degree {
+            font-weight: bold;
+            color: #ffffff;
+        }
+        .edu-school {
+            color: #94a3b8;
+            font-size: 7pt;
+            font-style: italic;
+        }
+
+        /* SKILLS BADGES */
+        .skill-badge {
+            background-color: #1f2937;
+            border-left: 2.5px solid $accent;
+            color: #f1f5f9;
+            font-size: 7.2pt;
+            font-weight: bold;
+            padding: 3px 6px;
+            margin-bottom: 4px;
+            border-radius: 2px;
+        }
+
+        /* LANGUES & DOTS */
+        .lang-item {
+            margin-bottom: 5px;
+            font-size: 7.5pt;
+            color: #e2e8f0;
+        }
+        .lang-dots {
+            color: $accent;
+            letter-spacing: 2px;
+            font-size: 8pt;
+        }
+
+        /* DISPO CALLOUT */
+        .dispo-card {
+            background-color: rgba(0, 191, 165, 0.12);
+            border: 1px solid $accent;
+            border-radius: 4px;
+            padding: 6px 8px;
+            margin-top: 10px;
+            text-align: center;
+            font-size: 7.5pt;
+            font-weight: bold;
+            color: $accent;
+        }
+
+        /* RIGHT MAIN COLUMN (68% width) */
+        .main-content {
+            width: 68%;
+            background-color: #ffffff;
+            padding: 24px 22px 20px 22px;
+            vertical-align: top;
+        }
+
+        /* NAME & HEADER */
+        .header-box {
+            margin-bottom: 12px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+        }
+        .name-title {
+            font-size: 22pt;
+            font-weight: bold;
+            margin: 0;
+            line-height: 1.1;
+            letter-spacing: 0.5px;
+        }
+        .name-first {
+            color: #0f172a;
+        }
+        .name-last {
+            color: $accent;
+        }
+        .job-headline {
+            font-size: 10pt;
+            font-weight: bold;
+            color: #475569;
+            text-transform: uppercase;
+            margin-top: 4px;
+            letter-spacing: 0.5px;
+        }
+        .badge-pill {
+            display: inline-block;
+            background-color: $accent;
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 7.5pt;
+            padding: 2px 9px;
+            border-radius: 12px;
+            text-transform: uppercase;
+            margin-top: 5px;
+            letter-spacing: 0.4px;
+        }
+
+        /* HOOK / PROFIL */
+        .profile-quote {
+            background-color: #f8fafc;
+            border-left: 3px solid $accent;
+            padding: 6px 10px;
+            margin-bottom: 12px;
+            font-size: 7.6pt;
+            line-height: 1.35;
+            color: #334155;
+            font-style: italic;
+            border-radius: 0 4px 4px 0;
+        }
+
+        /* SECTION TITLES */
         .section-header {
-            color: #0f172a; font-size: 9.5pt; font-weight: bold;
-            text-transform: uppercase; letter-spacing: 0.6px;
-            border-bottom: 1.5px solid $accent; padding-bottom: 3px; margin-bottom: 8px;
+            color: #0f172a;
+            font-size: 10pt;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-top: 6px;
+            margin-bottom: 8px;
+            padding-bottom: 2px;
+            border-bottom: 1.5px solid $accent;
         }
-        .exp-card {
-            border-left: 2.5px solid $accent; padding-left: 8px; margin-bottom: 7px;
+
+        /* TIMELINE EXPERIENCES */
+        .exp-item {
+            margin-bottom: 7px;
+            border-left: 2px solid #e2e8f0;
+            padding-left: 8px;
+            position: relative;
         }
-        .exp-header-table { width: 100%; border-collapse: collapse; margin-bottom: 2px; }
-        .exp-role { font-weight: bold; font-size: 8.5pt; color: #0f172a; text-align: left; }
+        .exp-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1px;
+        }
+        .exp-role {
+            font-weight: bold;
+            font-size: 8.5pt;
+            color: #0f172a;
+            text-align: left;
+        }
         .exp-date-badge {
-            background-color: #f1f5f9; border: 1px solid #e2e8f0;
-            color: $accent; font-weight: bold; font-size: 7pt;
-            padding: 1px 5px; border-radius: 3px; text-align: right; white-space: nowrap;
+            background-color: #f1f5f9;
+            color: #0f766e;
+            border: 1px solid #cbd5e1;
+            font-weight: bold;
+            font-size: 7pt;
+            padding: 1px 6px;
+            border-radius: 3px;
+            text-align: right;
+            white-space: nowrap;
         }
-        .exp-place { font-size: 7.5pt; color: #64748b; font-style: italic; margin-bottom: 2px; }
-        ul.tasks-list { margin: 1px 0 2px 12px; padding: 0; }
-        ul.tasks-list li { font-size: 7.8pt; color: #334155; margin-bottom: 1.5px; line-height: 1.25; }
+        .exp-sub {
+            font-size: 7.5pt;
+            color: $accent;
+            font-weight: bold;
+            margin-bottom: 2px;
+        }
+        ul.tasks-list {
+            margin: 1px 0 2px 12px;
+            padding: 0;
+        }
+        ul.tasks-list li {
+            font-size: 7.8pt;
+            color: #334155;
+            margin-bottom: 1.5px;
+            line-height: 1.25;
+        }
     </style>
 </head>
 <body>
 
-    <div class="header-banner">
-        <table class="header-table">
-            <tr>
-                <td class="photo-cell">\$photoHtml</td>
-                <td class="name-cell">
-                    <h1 class="name">DJIBRIL MAILLET</h1>
-                    <div style="margin-top: 3px;">
-                        <span class="job-tag">$tag</span>
-                        <span class="job-sub">$sub</span>
+    <table class="main-layout">
+        <tr>
+            <!-- SIDEBAR GAUCHE -->
+            <td class="sidebar">
+                <div class="photo-container">
+                    \$photoHtml
+                </div>
+
+                <div class="side-title">Contact</div>
+                <div class="contact-row">
+                    <div class="contact-label">Téléphone</div>
+                    <div class="contact-val">+33 6 56 82 85 67</div>
+                </div>
+                <div class="contact-row">
+                    <div class="contact-label">Email</div>
+                    <div class="contact-val">jeandjdj13@gmail.com</div>
+                </div>
+                <div class="contact-row">
+                    <div class="contact-label">Localisation</div>
+                    <div class="contact-val">Marseille (13005) &bull; France</div>
+                </div>
+                <div class="contact-row">
+                    <div class="contact-label">Mobilité</div>
+                    <div class="contact-val contact-highlight">Permis B + Véhicule personnel</div>
+                </div>
+                <div class="contact-row">
+                    <div class="contact-label">Profil</div>
+                    <div class="contact-val">19 ans &bull; Né le 09/07/2006</div>
+                </div>
+
+                <div class="side-title">Savoir-Être</div>
+$skillsHtml
+                <div class="side-title">Formation</div>
+                <div class="edu-block">
+                    <div class="edu-year">2025 - 2026</div>
+                    <div class="edu-degree">L1 Droit</div>
+                    <div class="edu-school">Faculté Canebière Marseille</div>
+                </div>
+                <div class="edu-block">
+                    <div class="edu-year">2024 - 2025</div>
+                    <div class="edu-degree">Baccalauréat Général</div>
+                    <div class="edu-school">Lycée Victor Hugo</div>
+                </div>
+                <div class="edu-block">
+                    <div class="edu-year">2021</div>
+                    <div class="edu-degree">Brevet &amp; Certif. PIX</div>
+                    <div class="edu-school">Compétences numériques</div>
+                </div>
+
+                <div class="side-title">Langues</div>
+                <div class="lang-item">
+                    Français : Maternelle<br>
+                    <span class="lang-dots">&bull;&bull;&bull;&bull;&bull;</span>
+                </div>
+                <div class="lang-item">
+                    Anglais : Niveau B2 (Courant)<br>
+                    <span class="lang-dots">&bull;&bull;&bull;&bull;&empty;</span>
+                </div>
+
+                <div class="dispo-card">
+                    Disponibilité Immédiate<br>
+                    $dispo
+                </div>
+            </td>
+
+            <!-- CONTENU PRINCIPAL DROIT -->
+            <td class="main-content">
+                <div class="header-box">
+                    <div class="name-title">
+                        <span class="name-first">DJIBRIL</span> <span class="name-last">MAILLET</span>
                     </div>
-                </td>
-                <td class="contact-cell">
-                    <div class="contact-item"><strong>Tél :</strong> +33 6 56 82 85 67</div>
-                    <div class="contact-item"><strong>Email :</strong> jeandjdj13@gmail.com</div>
-                    <div class="contact-item"><strong>Ville :</strong> Marseille (13005) &bull; France</div>
-                    <div class="contact-item contact-highlight">Permis B + Véhicule Personnel</div>
-                    <div class="contact-item">19 ans (09/07/2006) &bull; Immédiat</div>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="accent-strip"></div>
-
-    <div class="content-container">
-        <table class="grid-table">
-            <tr>
-                <td class="col-left">
-                    <div class="side-card">
-                        <div class="side-card-title">Profil &amp; Atouts</div>
-                        <p class="about-text">$profil</p>
+                    <div class="job-headline">$sub</div>
+                    <div>
+                        <span class="badge-pill">$tag</span>
                     </div>
+                </div>
 
-                    <div class="side-card">
-                        <div class="side-card-title">Savoir-Être</div>
-$skillsHtml                    </div>
+                <div class="profile-quote">
+                    &laquo; $quote &raquo;
+                </div>
 
-                    <div class="side-card">
-                        <div class="side-card-title">Formation</div>
-                        <div class="edu-item">
-                            <div class="edu-badge">2025 - 2026</div>
-                            <div class="edu-title">L1 Droit</div>
-                            <div class="edu-sub">Faculté Canebière Marseille</div>
-                        </div>
-                        <div class="edu-item">
-                            <div class="edu-badge">2024 - 2025</div>
-                            <div class="edu-title">Baccalauréat Général</div>
-                            <div class="edu-sub">Lycée Victor Hugo</div>
-                        </div>
-                        <div class="edu-item">
-                            <div class="edu-badge">2021</div>
-                            <div class="edu-title">Brevet &amp; Certif. PIX</div>
-                            <div class="edu-sub">Compétences numériques</div>
-                        </div>
-                    </div>
+                <div class="section-header">Expériences Professionnelles</div>
 
-                    <div class="side-card" style="margin-bottom: 0;">
-                        <div class="side-card-title">Langues &amp; Infos</div>
-                        <div style="font-size: 7.5pt; color: #334155; line-height: 1.35;">
-                            <div><strong>Français :</strong> Langue maternelle</div>
-                            <div><strong>Anglais :</strong> Niveau B2 (Accueil bilingue)</div>
-                            <div style="margin-top: 4px; color: $accent; font-weight: bold;">Disponibilité : $dispo</div>
-                        </div>
-                    </div>
-                </td>
-
-                <td class="col-right">
-                    <div class="section-header">Expériences Professionnelles</div>
-$expsHtml                </td>
-            </tr>
-        </table>
-    </div>
+$expsHtml            </td>
+        </tr>
+    </table>
 
 </body>
 </html>
@@ -992,15 +1304,15 @@ HTML;
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body { background-color: #f8f9fa; }
-        .landing-card { max-width: 600px; margin: 80px auto; text-align: center; padding: 40px; border-top: 5px solid $accent; border-radius: 8px; }
-        .btn-custom { background-color: #0f172a; border: 2px solid $accent; color: $accent; padding: 14px 28px; font-size: 1.1rem; font-weight: bold; }
-        .btn-custom:hover { background-color: $accent; color: #ffffff; }
+        .landing-card { max-width: 600px; margin: 80px auto; text-align: center; padding: 40px; border-top: 5px solid #111827; border-radius: 8px; }
+        .btn-custom { background-color: #111827; border: 2px solid $accent; color: $accent; padding: 14px 28px; font-size: 1.1rem; font-weight: bold; }
+        .btn-custom:hover { background-color: $accent; color: #111827; }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="card landing-card shadow-lg">
-            <h1 class="mb-3">CV de <span style="color:#0f172a">Djibril MAILLET</span></h1>
+            <h1 class="mb-3">CV de <span style="color:#111827">Djibril MAILLET</span></h1>
             <p class="text-muted mb-4">$sub</p>
             <form method="post">
                 <button type="submit" name="generate" class="btn btn-custom btn-lg shadow w-100 mb-3">
@@ -1017,10 +1329,10 @@ HTML;
 PHP;
 }
 
-foreach ($jobs as $key => $job) {
+foreach ($allJobs as $key => $job) {
     echo "Génération de {$job['file']}...\n";
-    $content = buildPhpFile($job);
+    $content = buildModernCanvaFile($job);
     file_put_contents($job['file'], $content);
 }
 
-echo "Tous les fichiers de Djibril ont été mis à jour avec le nouveau design moderne !\n";
+echo "Les 14 CVs de Djibril ont tous été mis à jour avec le modèle moderne Canva !\n";
