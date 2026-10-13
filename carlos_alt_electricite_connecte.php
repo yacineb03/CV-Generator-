@@ -330,11 +330,11 @@ if (isset($_POST['generate']) || (php_sapi_name() === 'cli' && isset($argv[1]) &
                 </div>
 
                 <div class="side-title">Compétences Clés</div>
-                <div class="skill-pill">✦ Réseaux VDI, baies de brassage & RJ45</div>
-                <div class="skill-pill">✦ Domotique résidentielle & protocoles connectés</div>
-                <div class="skill-pill">✦ Gestion technique du bâtiment (GTB / GTC)</div>
-                <div class="skill-pill">✦ Installation bornes de recharge IRVE</div>
-                <div class="skill-pill">✦ Lecture de schémas électriques & paramétrage</div>
+                <div class="skill-pill">Réseaux VDI, baies de brassage & RJ45</div>
+                <div class="skill-pill">Domotique résidentielle & protocoles connectés</div>
+                <div class="skill-pill">Gestion technique du bâtiment (GTB / GTC)</div>
+                <div class="skill-pill">Installation bornes de recharge IRVE</div>
+                <div class="skill-pill">Lecture de schémas électriques & paramétrage</div>
 
                 <div class="side-title">Langues</div>
                 <div class="lang-line"><span class="lang-bold">Français :</span> Langue maternelle</div>

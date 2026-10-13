@@ -330,11 +330,11 @@ if (isset($_POST['generate']) || (php_sapi_name() === 'cli' && isset($argv[1]) &
                 </div>
 
                 <div class="side-title">Compétences Clés</div>
-                <div class="skill-pill">✦ Moteurs marins hors-bord & in-board (Essence/Diesel)</div>
-                <div class="skill-pill">✦ Transmissions, embases & circuits de refroidissement</div>
-                <div class="skill-pill">✦ Vidanges marines, hivernage & déshivernage</div>
-                <div class="skill-pill">✦ Diagnostic injection & allumage nautique</div>
-                <div class="skill-pill">✦ Sécurité sur quai & manutention portuaire</div>
+                <div class="skill-pill">Moteurs marins hors-bord & in-board (Essence/Diesel)</div>
+                <div class="skill-pill">Transmissions, embases & circuits de refroidissement</div>
+                <div class="skill-pill">Vidanges marines, hivernage & déshivernage</div>
+                <div class="skill-pill">Diagnostic injection & allumage nautique</div>
+                <div class="skill-pill">Sécurité sur quai & manutention portuaire</div>
 
                 <div class="side-title">Langues</div>
                 <div class="lang-line"><span class="lang-bold">Français :</span> Langue maternelle</div>

@@ -330,11 +330,11 @@ if (isset($_POST['generate']) || (php_sapi_name() === 'cli' && isset($argv[1]) &
                 </div>
 
                 <div class="side-title">Compétences Clés</div>
-                <div class="skill-pill">✦ Pompes à chaleur (PAC air/eau, air/air)</div>
-                <div class="skill-pill">✦ Réseaux hydrauliques, aérauliques & sanitaire</div>
-                <div class="skill-pill">✦ Énergies renouvelables & solaire thermique</div>
-                <div class="skill-pill">✦ Équilibrage de réseaux & régulation CVC</div>
-                <div class="skill-pill">✦ Habilitation électrique & sécurité</div>
+                <div class="skill-pill">Pompes à chaleur (PAC air/eau, air/air)</div>
+                <div class="skill-pill">Réseaux hydrauliques, aérauliques & sanitaire</div>
+                <div class="skill-pill">Énergies renouvelables & solaire thermique</div>
+                <div class="skill-pill">Équilibrage de réseaux & régulation CVC</div>
+                <div class="skill-pill">Habilitation électrique & sécurité</div>
 
                 <div class="side-title">Langues</div>
                 <div class="lang-line"><span class="lang-bold">Français :</span> Langue maternelle</div>

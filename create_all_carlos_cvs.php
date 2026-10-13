@@ -737,7 +737,7 @@ function generateCarlosCvCode($data) {
     
     $skillsHtml = '';
     foreach ($data['skills'] as $s) {
-        $skillsHtml .= "                <div class=\"skill-pill\">✦ $s</div>\n";
+        $skillsHtml .= "                <div class=\"skill-pill\">$s</div>\n";
     }
 
     $expsHtml = '';

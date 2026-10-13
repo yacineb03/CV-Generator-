@@ -330,11 +330,11 @@ if (isset($_POST['generate']) || (php_sapi_name() === 'cli' && isset($argv[1]) &
                 </div>
 
                 <div class="side-title">Compétences Clés</div>
-                <div class="skill-pill">✦ Liaisons au sol, freinage & suspensions</div>
-                <div class="skill-pill">✦ Analyseur de gaz & opacimètre antipollution</div>
-                <div class="skill-pill">✦ Diagnostic OBD & électronique embarquée</div>
-                <div class="skill-pill">✦ Réglementation contrôle technique VL</div>
-                <div class="skill-pill">✦ Rigueur, intégrité & sens du contact client</div>
+                <div class="skill-pill">Liaisons au sol, freinage & suspensions</div>
+                <div class="skill-pill">Analyseur de gaz & opacimètre antipollution</div>
+                <div class="skill-pill">Diagnostic OBD & électronique embarquée</div>
+                <div class="skill-pill">Réglementation contrôle technique VL</div>
+                <div class="skill-pill">Rigueur, intégrité & sens du contact client</div>
 
                 <div class="side-title">Langues</div>
                 <div class="lang-line"><span class="lang-bold">Français :</span> Langue maternelle</div>

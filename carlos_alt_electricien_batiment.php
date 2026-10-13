@@ -330,11 +330,11 @@ if (isset($_POST['generate']) || (php_sapi_name() === 'cli' && isset($argv[1]) &
                 </div>
 
                 <div class="side-title">Compétences Clés</div>
-                <div class="skill-pill">✦ Câblage tableaux électriques & disjoncteurs</div>
-                <div class="skill-pill">✦ Tirage de câbles, pose goulottes & appareillages</div>
-                <div class="skill-pill">✦ Dépannage éclairage, prises & circuits force</div>
-                <div class="skill-pill">✦ Maintenance multiservice second œuvre bâtiment</div>
-                <div class="skill-pill">✦ Respect norme NF C 15-100 & sécurité EPI</div>
+                <div class="skill-pill">Câblage tableaux électriques & disjoncteurs</div>
+                <div class="skill-pill">Tirage de câbles, pose goulottes & appareillages</div>
+                <div class="skill-pill">Dépannage éclairage, prises & circuits force</div>
+                <div class="skill-pill">Maintenance multiservice second œuvre bâtiment</div>
+                <div class="skill-pill">Respect norme NF C 15-100 & sécurité EPI</div>
 
                 <div class="side-title">Langues</div>
                 <div class="lang-line"><span class="lang-bold">Français :</span> Langue maternelle</div>

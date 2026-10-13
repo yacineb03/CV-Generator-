@@ -330,11 +330,11 @@ if (isset($_POST['generate']) || (php_sapi_name() === 'cli' && isset($argv[1]) &
                 </div>
 
                 <div class="side-title">Compétences Clés</div>
-                <div class="skill-pill">✦ Pliage, garniture & toastage sous presse</div>
-                <div class="skill-pill">✦ Préparation sauce fromagère & sauces</div>
-                <div class="skill-pill">✦ Gestion expéditions Uber Eats & Deliveroo</div>
-                <div class="skill-pill">✦ Règles HACCP & rotation des ingrédients</div>
-                <div class="skill-pill">✦ Rapidité, rigueur & bonne humeur</div>
+                <div class="skill-pill">Pliage, garniture & toastage sous presse</div>
+                <div class="skill-pill">Préparation sauce fromagère & sauces</div>
+                <div class="skill-pill">Gestion expéditions Uber Eats & Deliveroo</div>
+                <div class="skill-pill">Règles HACCP & rotation des ingrédients</div>
+                <div class="skill-pill">Rapidité, rigueur & bonne humeur</div>
 
                 <div class="side-title">Langues</div>
                 <div class="lang-line"><span class="lang-bold">Français :</span> Langue maternelle</div>
