@@ -503,6 +503,72 @@ HTML;
                     </div>
                 </div>
             </div>
+
+            <!-- NOUVEAU : CARLOS MOREIRA VEIGA (ALTERNANCES TECHNIQUES & RESTAURATION) -->
+            <div class="col-12">
+                <div class="card shadow-lg border-0" style="background: linear-gradient(135deg, #1c1917 0%, #292524 100%); color: white; border-radius: 14px; border-left: 6px solid #0f766e !important;">
+                    <div class="card-body p-4">
+                        <div class="d-flex flex-wrap justify-content-between align-items-center mb-3">
+                            <div class="d-flex align-items-center gap-3">
+                                <img src="profil_carlos.jpg" alt="Carlos" style="width: 60px; height: 60px; border-radius: 50%; border: 2px solid #0f766e; object-fit: cover;" onerror="this.src='https://www.svgrepo.com/show/447833/user-profile.svg'">
+                                <div>
+                                    <span class="badge px-3 py-1 fw-bold text-uppercase mb-1" style="background-color: #0f766e; color: #ffffff;">⭐ NOUVEAU DOSSIER CANDIDAT</span>
+                                    <h2 class="h3 fw-bold text-white mb-1">⚡ CARLOS MOREIRA VEIGA — CV ALTERNANCE &amp; EMPLOI</h2>
+                                    <p class="text-light mb-0 small" style="color: #d6d3d1 !important;">
+                                        12 CVs sur-mesure (7 Alternances techniques CVC, Bâtiment, Marine, Auto + 5 Restauration rapide). BTS Énergies en cours, permis B et <strong>zéro adresse postale</strong>.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="mt-3 mt-lg-0">
+                                <a href="carlos_cv.php" class="btn btn-lg fw-bold shadow px-4 py-2" style="background-color: #0f766e; color: #ffffff; border: none;">
+                                    🚀 Ouvrir le Hub Carlos Moreira Veiga (12 CVs) →
+                                </a>
+                            </div>
+                        </div>
+
+                        <hr style="border-color: rgba(255,255,255,0.2);">
+
+                        <div class="row g-2 text-start">
+                            <!-- CVC & Énergies -->
+                            <div class="col-md-3">
+                                <div class="p-2 rounded h-100" style="background: rgba(255,255,255,0.06);">
+                                    <div class="fw-bold small mb-2" style="color: #2dd4bf;">❄️ ALTERNANCES CVC</div>
+                                    <a href="carlos_alt_froid_clim.php" class="btn btn-sm btn-outline-light w-100 mb-1 text-start">🧊 Froid Commercial &amp; Clim</a>
+                                    <a href="carlos_alt_chauffage_clim_enr.php" class="btn btn-sm btn-outline-light w-100 text-start">🔥 Chauffage, Clim &amp; ENR</a>
+                                </div>
+                            </div>
+                            <!-- Élec & Bâtiment -->
+                            <div class="col-md-3">
+                                <div class="p-2 rounded h-100" style="background: rgba(255,255,255,0.06);">
+                                    <div class="fw-bold small mb-2" style="color: #facc15;">⚡ ÉLEC &amp; BÂTIMENT</div>
+                                    <a href="carlos_alt_electricien_batiment.php" class="btn btn-sm btn-outline-light w-100 mb-1 text-start">💡 Électricien Bâtiment</a>
+                                    <a href="carlos_alt_electricite_connecte.php" class="btn btn-sm btn-outline-light w-100 text-start">📱 Bâtiment Connecté &amp; VDI</a>
+                                </div>
+                            </div>
+                            <!-- Marine & Auto -->
+                            <div class="col-md-3">
+                                <div class="p-2 rounded h-100" style="background: rgba(255,255,255,0.06);">
+                                    <div class="fw-bold small mb-2" style="color: #38bdf8;">⚓ MARINE &amp; VÉHICULES</div>
+                                    <a href="carlos_alt_meca_marine_plaisance.php" class="btn btn-sm btn-outline-light w-100 mb-1 text-start">🛥️ Mécanique Marine</a>
+                                    <a href="carlos_alt_maintenance_marine_plaisance.php" class="btn btn-sm btn-outline-light w-100 mb-1 text-start">⚓ Maintenance Plaisance</a>
+                                    <a href="carlos_alt_controleur_technique_auto.php" class="btn btn-sm btn-outline-light w-100 text-start">🚗 Contrôleur Auto VL</a>
+                                </div>
+                            </div>
+                            <!-- Restauration -->
+                            <div class="col-md-3">
+                                <div class="p-2 rounded h-100" style="background: rgba(255,255,255,0.06);">
+                                    <div class="fw-bold small mb-2" style="color: #fb923c;">🍔 RESTAURATION RAPIDE</div>
+                                    <a href="carlos_restau_quick.php" class="btn btn-sm btn-outline-light w-100 mb-1 text-start">🔴 Quick</a>
+                                    <a href="carlos_restau_g_la_dalle.php" class="btn btn-sm btn-outline-light w-100 mb-1 text-start">🟠 G-La Dalle</a>
+                                    <a href="carlos_restau_popeyes.php" class="btn btn-sm btn-outline-light w-100 mb-1 text-start">🍗 Popeyes / KFC</a>
+                                    <a href="carlos_restau_burger_king.php" class="btn btn-sm btn-outline-light w-100 mb-1 text-start">👑 Burger King</a>
+                                    <a href="carlos_restau_otacos.php" class="btn btn-sm btn-outline-light w-100 text-start">🌮 O'Tacos</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <!-- INTÉRIM SUISSE -->
             <div class="col-md-6">
                 <div class="card shadow-sm h-100 border-top border-danger border-top-3">
@@ -605,16 +671,24 @@ HTML;
             <div class="col-md-12">
                 <div class="card shadow-sm border-top border-secondary border-top-3">
                     <div class="card-body">
-                        <h4 class="card-title text-secondary mb-3">🧑‍🤝‍🧑 CV PROCHES <small class="text-muted fs-6">(Djibril Maillet)</small></h4>
-                        <div class="mb-3">
-                            <a href="djibril_cv_emploi.php" class="btn btn-dark w-100 fw-bold shadow-sm py-2" style="background-color: #1c354d; border: 2px solid #00bfa5; color: #00bfa5;">
-                                ⭐ Accéder aux 14 CVs Emploi Ciblés de Djibril Maillet (Nouveau Style Sidebar) →
-                            </a>
+                        <h4 class="card-title text-secondary mb-3">🧑‍🤝‍🧑 CV PROCHES <small class="text-muted fs-6">(Djibril Maillet &amp; Carlos Moreira Veiga)</small></h4>
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <a href="djibril_cv_emploi.php" class="btn btn-dark w-100 fw-bold shadow-sm py-2" style="background-color: #1c354d; border: 2px solid #00bfa5; color: #00bfa5;">
+                                    ⭐ 14 CVs de Djibril Maillet (Sidebar Sarcelle) →
+                                </a>
+                            </div>
+                            <div class="col-md-6">
+                                <a href="carlos_cv.php" class="btn btn-dark w-100 fw-bold shadow-sm py-2" style="background-color: #1c1917; border: 2px solid #0f766e; color: #2dd4bf;">
+                                    ⭐ 12 CVs de Carlos Moreira Veiga (Sidebar Ivoire &amp; CVC) →
+                                </a>
+                            </div>
                         </div>
                         <div class="row g-2">
-                            <div class="col-md-4"><a href="djibril.php" class="btn btn-outline-secondary w-100">📄 Frontalier Polyvalent</a></div>
-                            <div class="col-md-4"><a href="djibril_manutention.php" class="btn btn-outline-secondary w-100">📦 Frontalier Manutention</a></div>
-                            <div class="col-md-4"><a href="djibril_restauration.php" class="btn btn-outline-secondary w-100">🍔 Frontalier Restauration</a></div>
+                            <div class="col-md-3"><a href="djibril.php" class="btn btn-outline-secondary w-100 btn-sm">📄 Djibril Polyvalent</a></div>
+                            <div class="col-md-3"><a href="djibril_manutention.php" class="btn btn-outline-secondary w-100 btn-sm">📦 Djibril Manutention</a></div>
+                            <div class="col-md-3"><a href="carlos_alt_froid_clim.php" class="btn btn-outline-secondary w-100 btn-sm">❄️ Carlos Froid &amp; Clim</a></div>
+                            <div class="col-md-3"><a href="carlos_restau_quick.php" class="btn btn-outline-secondary w-100 btn-sm">🍔 Carlos Quick</a></div>
                         </div>
                     </div>
                 </div>
