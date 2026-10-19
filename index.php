@@ -630,6 +630,9 @@ HTML;
                                 <a href="cv_conducteur_travaux.php" class="btn btn-warning w-100 fw-bold py-2 shadow-sm text-dark">🏗️ Alternance Conducteur de Travaux (Général)</a>
                             </div>
                             <div class="col-12">
+                                <a href="cv_conducteur_travaux_pluguffan.php" class="btn btn-warning w-100 fw-bold py-2 shadow-sm text-dark">🏗️ Alternance Conducteur de Travaux — PLUGUFFAN (29)</a>
+                            </div>
+                            <div class="col-12">
                                 <a href="cv_chef_de_chantier.php" class="btn btn-warning w-100 fw-bold py-2 shadow-sm text-dark">🚧 Alternance Chef de Chantier (Général)</a>
                             </div>
                             <div class="col-12">
