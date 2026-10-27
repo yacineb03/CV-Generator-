@@ -122,7 +122,7 @@ if (isset($_POST['generate']) || (php_sapi_name() === 'cli' && isset($argv[1]) &
             letter-spacing: 0.4px;
         }
 
-        /* 1. COMPÉTENCES CLÉS (3 COLS) */
+        /* COMPÉTENCES (3 COLS) */
         .skills-table {
             width: 100%;
             border-collapse: collapse;
@@ -138,7 +138,7 @@ if (isset($_POST['generate']) || (php_sapi_name() === 'cli' && isset($argv[1]) &
             border: 1px solid #e2e8f0;
             border-radius: 4px;
             padding: 5px 7px;
-            min-height: 88px;
+            min-height: 86px;
         }
         .skill-cat { 
             font-weight: bold; 
@@ -230,7 +230,7 @@ if (isset($_POST['generate']) || (php_sapi_name() === 'cli' && isset($argv[1]) &
             border-bottom: 1px dotted #e2e8f0;
         }
         .edu-date {
-            width: 95px;
+            width: 90px;
             font-weight: bold;
             font-size: 7.8pt;
             color: #d97706;
@@ -294,7 +294,7 @@ if (isset($_POST['generate']) || (php_sapi_name() === 'cli' && isset($argv[1]) &
                     <div class="header">
                         <h1>Yacine BENBRIK</h1>
                         <div class="subtitle">Électricien d'Équipement du Bâtiment</div>
-                        <div class="search-objective">RECHERCHE ALTERNANCE &bull; TITRE PRO (CAP/BEP) &bull; RYTHME AFPA</div>
+                        <div class="search-objective">RECHERCHE D'ALTERNANCE &bull; CAP ÉLECTRICIEN (1 AN)</div>
                     </div>
                 </td>
                 <td class="header-right">
@@ -306,47 +306,48 @@ if (isset($_POST['generate']) || (php_sapi_name() === 'cli' && isset($argv[1]) &
 
     <!-- 1. PROFIL EN RECONVERSION -->
     <div class="section">
-        <h2>Profil &amp; Objectif Professionnel</h2>
+        <h2>Profil &amp; Projet de Reconversion</h2>
         <div class="profil-block">
-            En <strong>reconversion professionnelle motivée vers les métiers de l'électricité du bâtiment</strong> (Titre Professionnel Niveau 3 / CAP préparé avec l'Afpa Marseille La Treille), je souhaite m'investir pleinement au sein de votre entreprise en alternance. Issu d'un <strong>Bac STI2D</strong> (bases solides en énergie, électrotechnique et schémas) et d'un cursus axé sur la méthode et la logique, j'allie habileté manuelle, rigueur absolue et sens de la sécurité. Motivé, disponible immédiatement et véhiculé, je suis prêt à apprendre à vos côtés pour devenir rapidement autonome sur vos chantiers.
+            Titulaire d'un <strong>Bac STI2D</strong> (bases techniques en énergie et schémas) et fort d'un parcours axé sur la rigueur et la méthode, je souhaite me <strong>réorienter avec une grande motivation vers les métiers de l'électricité en préparant un CAP Électricien en alternance</strong>.<br>
+            Passionné par le travail manuel, sérieux et vigilant quant aux consignes de sécurité, je recherche une entreprise pour apprendre le métier sur le terrain aux côtés d'un tuteur expérimenté et m'investir durablement sur vos chantiers. Permis B, véhiculé et disponible immédiatement.
         </div>
     </div>
 
-    <!-- 2. COMPÉTENCES CLÉS -->
+    <!-- 2. COMPÉTENCES CLÉS & ATOUTS -->
     <div class="section">
-        <h2>Compétences Clés &amp; Savoir-Faire</h2>
+        <h2>Bases Techniques &amp; Savoir-Être</h2>
         <table class="skills-table">
             <tr>
                 <td class="skills-column">
                     <div class="skill-card">
-                        <span class="skill-cat">Courants Forts &amp; Énergie</span>
+                        <span class="skill-cat">Bases Techniques (STI2D)</span>
                         <div class="skill-list">
-                            &bull; <strong>Cheminement :</strong> Pose de gaines ICTA, moulures, goulottes et saignées<br>
-                            &bull; <strong>Câblage :</strong> Tirage de câbles, pose d'appareillages (prises, éclairages, va-et-vient)<br>
-                            &bull; <strong>Distribution :</strong> Implantation tableau, disjoncteurs, coffrets de commande<br>
-                            &bull; <strong>Chauffage &amp; ECS :</strong> Raccordements appareils de chauffage et ballons
+                            &bull; <strong>Électrotechnique :</strong> Notions de tension, intensité, puissance et circuits<br>
+                            &bull; <strong>Schémas :</strong> Lecture et compréhension de schémas électriques simples<br>
+                            &bull; <strong>Outillage :</strong> Maniement sécurisé d'outils à main et électroportatifs<br>
+                            &bull; <strong>Organisation :</strong> Traçage, repérage et prise de mesures soignée
                         </div>
                     </div>
                 </td>
                 <td class="skills-column">
                     <div class="skill-card">
-                        <span class="skill-cat">Courants Faibles &amp; VDI</span>
+                        <span class="skill-cat">Aptitudes Chantier</span>
                         <div class="skill-list">
-                            &bull; <strong>Réseaux Comm. :</strong> Câblage VDI, prises RJ45, coffrets de communication<br>
-                            &bull; <strong>Sécurité &amp; Accès :</strong> Interphonie, gâche électrique, sonnettes, visiophone<br>
-                            &bull; <strong>Éco-Énergie :</strong> Détecteurs de présence, éclairage LED basse consommation<br>
-                            &bull; <strong>Schémas :</strong> Lecture de plans d'architecte et schémas électriques unifilaires
+                            &bull; <strong>Préparation :</strong> Rangement méthodique et propreté de la zone de travail<br>
+                            &bull; <strong>Apprentissage :</strong> Écoute active et respect strict des consignes du tuteur<br>
+                            &bull; <strong>Manuel :</strong> Habileté manuelle, motivation et goût du travail de terrain<br>
+                            &bull; <strong>Polyvalence :</strong> Déplacement de matériel, assistance aux opérations
                         </div>
                     </div>
                 </td>
                 <td class="skills-column">
                     <div class="skill-card">
-                        <span class="skill-cat">Sécurité &amp; Pratique Chantier</span>
+                        <span class="skill-cat">Sécurité &amp; Mobilité</span>
                         <div class="skill-list">
-                            &bull; <strong>Norme NF C 15-100 :</strong> Respect des calibres, sections et volumes<br>
-                            &bull; <strong>Sécurité / EPI :</strong> Sensibilisation VAT, consignation, travail hors tension<br>
-                            &bull; <strong>Outillage :</strong> Pince à dénuder, tournevis isolés 1000V, perforateur<br>
-                            &bull; <strong>Mobilité BTP :</strong> Permis B + véhicule, ponctualité exemplaire
+                            &bull; <strong>Sécurité :</strong> Sensibilisation aux risques électriques et règles de prévention<br>
+                            &bull; <strong>EPI :</strong> Port systématique et scrupuleux des équipements de protection<br>
+                            &bull; <strong>Sérieux :</strong> Ponctualité exemplaire, assiduité et esprit d'équipe<br>
+                            &bull; <strong>Mobilité :</strong> Permis B + Véhicule personnel (Marseille, Aubagne, etc.)
                         </div>
                     </div>
                 </td>
@@ -354,24 +355,9 @@ if (isset($_POST['generate']) || (php_sapi_name() === 'cli' && isset($argv[1]) &
         </table>
     </div>
 
-    <!-- 3. EXPÉRIENCES & IMMERSION TERRAIN -->
+    <!-- 3. EXPÉRIENCES PROFESSIONNELLES -->
     <div class="section">
-        <h2>Expériences Professionnelles &amp; Pratique Chantier</h2>
-
-        <div class="exp-box">
-            <table class="exp-header-table">
-                <tr>
-                    <td class="exp-title">Aide-Ouvrier &amp; Pratique Chantier de Rénovation (Second Œuvre)</td>
-                    <td class="exp-date">2024 - 2026</td>
-                </tr>
-            </table>
-            <div class="exp-subtitle">Chantiers Résidentiels &amp; Rénovation — Région Marseillaise (Aide auprès d'artisans/proches)</div>
-            <ul class="exp-list">
-                <li>Aide au passage de gaines, tirage de conducteurs électriques (phases, neutres, terres) en cloisons et combles.</li>
-                <li>Préparation des boîtes d'encastrement, fixation des supports et assistance à la pose d'appareillages muraux.</li>
-                <li>Maintien de la propreté du chantier, tri sélectif des chutes de cuivre/gaines et respect strict des consignes de sécurité.</li>
-            </ul>
-        </div>
+        <h2>Expériences Professionnelles</h2>
 
         <div class="exp-box">
             <table class="exp-header-table">
@@ -380,24 +366,39 @@ if (isset($_POST['generate']) || (php_sapi_name() === 'cli' && isset($argv[1]) &
                     <td class="exp-date">2025 - 2026</td>
                 </tr>
             </table>
-            <div class="exp-subtitle">Entreprise de Maintenance &amp; Énergétique — Bouches-du-Rhône (13)</div>
+            <div class="exp-subtitle">Entreprise de Maintenance &amp; Énergétique — Région Marseillaise (13)</div>
             <ul class="exp-list">
-                <li>Observation d'interventions techniques, découverte des alimentations électriques des équipements sanitaires/thermiques.</li>
+                <li>Observation d'interventions techniques de terrain, découverte des installations thermiques et sanitaires.</li>
                 <li>Accompagnement de techniciens qualifiés, manipulation sécurisée de l'outillage et port systématique des EPI.</li>
+                <li>Compréhension des impératifs de planning, de rigueur d'exécution et de sécurité sur site.</li>
             </ul>
         </div>
 
         <div class="exp-box">
             <table class="exp-header-table">
                 <tr>
-                    <td class="exp-title">Gestion de Projet Technique, Logique &amp; Rigueur Méthodique</td>
+                    <td class="exp-title">Coordination de Projet, Méthode &amp; Rigueur Opérationnelle</td>
                     <td class="exp-date">2024 - 2025</td>
                 </tr>
             </table>
-            <div class="exp-subtitle">Web@cadémie by Epitech Marseille — Formation intensive par projets</div>
+            <div class="exp-subtitle">Web@cadémie by Epitech Marseille — Formation par projets en équipe</div>
             <ul class="exp-list">
-                <li>Rigueur analytique, respect rigoureux des délais, des cahiers des charges et résolution méthodique d'imprévus.</li>
-                <li>Travail en équipe quotidien, communication fluide et capacité d'adaptation rapide aux nouvelles technologies.</li>
+                <li>Rigueur analytique, respect méthodique des consignes, des cahiers des charges et résolution d'imprévus.</li>
+                <li>Travail collaboratif quotidien, communication claire et grande capacité d'apprentissage rapide.</li>
+            </ul>
+        </div>
+
+        <div class="exp-box">
+            <table class="exp-header-table">
+                <tr>
+                    <td class="exp-title">Analyse Technique, Structuration &amp; Données</td>
+                    <td class="exp-date">2022 - 2024</td>
+                </tr>
+            </table>
+            <div class="exp-subtitle">BTS SIO &amp; Projets Techniques — Marseille</div>
+            <ul class="exp-list">
+                <li>Méthode de travail structurée, sens du détail et concentration soutenue sur des tâches techniques.</li>
+                <li>Organisation méthodique, gestion des priorités et respect des procédures.</li>
             </ul>
         </div>
     </div>
@@ -407,17 +408,17 @@ if (isset($_POST['generate']) || (php_sapi_name() === 'cli' && isset($argv[1]) &
         <h2>Formation &amp; Diplômes</h2>
         <table class="edu-table">
             <tr>
-                <td class="edu-cell edu-date">2026 - 2027<br><span style="font-size:7pt; color:#64748b;">(En préparation)</span></td>
-                <td class="edu-cell">
-                    <div class="edu-title">Titre Professionnel Électricien d'Équipement du Bâtiment (Niveau 3 - CAP/BEP)</div>
-                    <div class="edu-sub">En partenariat avec l'Afpa Marseille La Treille &bull; Rythme : 3 semaines entreprise / 1 semaine Afpa</div>
-                </td>
-            </tr>
-            <tr>
                 <td class="edu-cell edu-date">2024 - 2025</td>
                 <td class="edu-cell">
                     <div class="edu-title">Développeur Intégrateur Web (Niveau Bac+1)</div>
-                    <div class="edu-sub">Web@cadémie by Epitech Marseille &bull; Rigueur de méthode, logique technique et gestion de planning</div>
+                    <div class="edu-sub">Web@cadémie by Epitech Marseille &bull; Méthode de travail, logique et gestion de projet</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="edu-cell edu-date">2022 - 2023</td>
+                <td class="edu-cell">
+                    <div class="edu-title">BTS SIO (Services Informatiques aux Organisations)</div>
+                    <div class="edu-sub">Marseille &bull; Analyse technique, structuration et bureautique avancée</div>
                 </td>
             </tr>
             <tr>
@@ -437,20 +438,20 @@ if (isset($_POST['generate']) || (php_sapi_name() === 'cli' && isset($argv[1]) &
             <tr>
                 <td class="hobby-item">
                     <div class="hobby-card">
+                        <div class="hobby-title">Motivation &amp; Envie d'Apprendre</div>
+                        Déterminé à progresser au contact d'un tuteur expérimenté et à acquérir les bons gestes métier.
+                    </div>
+                </td>
+                <td class="hobby-item">
+                    <div class="hobby-card">
                         <div class="hobby-title">Rigueur &amp; Concentration</div>
-                        Attention méticuleuse aux détails, respect scrupuleux des normes de sécurité et des consignes.
+                        Minutie dans l'exécution, respect scrupuleux des consignes de sécurité et vigilance constante.
                     </div>
                 </td>
                 <td class="hobby-item">
                     <div class="hobby-card">
-                        <div class="hobby-title">Condition Physique &amp; Dynamisme</div>
-                        Pratique sportive régulière (Basket-ball), endurance, goût de l'effort physique et travail manuel.
-                    </div>
-                </td>
-                <td class="hobby-item">
-                    <div class="hobby-card">
-                        <div class="hobby-title">Autonomie &amp; Esprit d'Équipe</div>
-                        Sens de l'écoute, ponctualité exemplaire, esprit d'entraide et volonté d'apprendre au contact des tuteurs.
+                        <div class="hobby-title">Endurance &amp; Esprit d'Équipe</div>
+                        Bonne condition physique (pratique du Basket-ball), ponctualité exemplaire et esprit d'entraide.
                     </div>
                 </td>
             </tr>
@@ -519,11 +520,11 @@ HTML;
 <body>
     <div class="container">
         <div class="card landing-card shadow-lg">
-            <span class="badge-target">⚡ CIBLE ANNONCES AFPA • AUBAGNE / MARSEILLE / GARDANNE</span>
+            <span class="badge-target">⚡ CIBLE ANNONCES ALTERNANCE CAP • AUBAGNE / MARSEILLE / GARDANNE</span>
             <h1 class="mb-2">CV <span style="color:#d97706">Électricien d'Équipement</span></h1>
-            <h4 class="text-secondary mb-3">Titre Pro Niveau 3 (CAP/BEP) en Alternance</h4>
+            <h4 class="text-secondary mb-3">Candidature CAP Électricien en Alternance</h4>
             <p class="text-muted mb-4">
-                CV spécialisé pour l'alternance en électricité du bâtiment : réseaux courants forts (armoires, câblage, appareillage) et courants faibles (VDI, communication, efficacité énergétique).
+                CV adapté pour une entrée en alternance / apprentissage : profil motivé en reconversion avec bases techniques STI2D, rigueur de travail, aptitudes manuelles et vigilance sécurité.
             </p>
             <form method="post">
                 <button type="submit" name="generate" class="btn btn-electric btn-lg shadow w-100 mb-3">
