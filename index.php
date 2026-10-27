@@ -639,6 +639,9 @@ HTML;
                                 <a href="frigoriste.php" class="btn btn-outline-success w-100 fw-bold py-2">❄️ Alternance Frigoriste CVC (Chaud & Froid)</a>
                             </div>
                             <div class="col-12">
+                                <a href="cv_electricien_batiment_cap.php" class="btn btn-warning w-100 fw-bold py-2 shadow-sm text-dark" style="border: 2px solid #d97706; background-color: #fef3c7;">⚡ Électricien d'Équipement du Bâtiment (Alternance CAP / Afpa)</a>
+                            </div>
+                            <div class="col-12">
                                 <a href="electrotechnique.php" class="btn btn-outline-success w-100 fw-bold py-2">⚡ Alternance BTS Électrotechnique / Assistant Conducteur de Travaux</a>
                             </div>
                             <div class="col-12">
